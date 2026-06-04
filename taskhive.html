@@ -203,9 +203,9 @@
       width: 1100px;
       height: 700px;
       background:
-        radial-gradient(ellipse 55% 45% at 30% 20%, rgba(107,78,255,0.13) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 75% 15%, rgba(0,214,143,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184,166,255,0.10) 0%, transparent 70%);
+        radial-gradient(ellipse 55% 45% at 30% 20%, rgba(107, 78, 255, 0.13) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 75% 15%, rgba(0, 214, 143, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(184, 166, 255, 0.10) 0%, transparent 70%);
       pointer-events: none;
       z-index: 0
     }
@@ -214,8 +214,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(107,78,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(107,78,255,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(107, 78, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(107, 78, 255, 0.04) 1px, transparent 1px);
       background-size: 52px 52px;
       z-index: 0
     }
@@ -240,7 +240,7 @@
       font-weight: 500;
       color: var(--ink2);
       margin-bottom: 28px;
-      box-shadow: 0 2px 16px rgba(107,78,255,0.10);
+      box-shadow: 0 2px 16px rgba(107, 78, 255, 0.10);
       cursor: default
     }
 
@@ -260,13 +260,22 @@
       height: 7px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 0 2px rgba(0,214,143,0.25);
+      box-shadow: 0 0 0 2px rgba(0, 214, 143, 0.25);
       animation: blink 2s infinite
     }
 
     @keyframes blink {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 2px rgba(0,214,143,0.25) }
-      50%       { opacity: 0.4; box-shadow: 0 0 0 4px rgba(0,214,143,0.10) }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 2px rgba(0, 214, 143, 0.25)
+      }
+
+      50% {
+        opacity: 0.4;
+        box-shadow: 0 0 0 4px rgba(0, 214, 143, 0.10)
+      }
     }
 
     /* headline */
@@ -336,7 +345,7 @@
     .btn-cta-primary:hover {
       background: var(--violet);
       transform: translateY(-2px);
-      box-shadow: 0 14px 40px rgba(107,78,255,0.32)
+      box-shadow: 0 14px 40px rgba(107, 78, 255, 0.32)
     }
 
     .btn-cta-secondary {
@@ -381,12 +390,14 @@
       border-right: 1px solid var(--border)
     }
 
-    .hero-fine span:last-child { border-right: none }
+    .hero-fine span:last-child {
+      border-right: none
+    }
 
     .hero-fine-check {
       width: 14px;
       height: 14px;
-      background: rgba(0,214,143,0.12);
+      background: rgba(0, 214, 143, 0.12);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -419,7 +430,7 @@
       font-size: 0.75rem;
       font-weight: 500;
       color: var(--ink);
-      box-shadow: 0 4px 20px rgba(107,78,255,0.10);
+      box-shadow: 0 4px 20px rgba(107, 78, 255, 0.10);
       z-index: 10;
       white-space: nowrap;
       animation: chipFloat 4s ease-in-out infinite
@@ -438,14 +449,40 @@
       flex-shrink: 0
     }
 
-    .chip-tl { top: -18px; left: -30px; animation-delay: 0s }
-    .chip-tr { top: 30px; right: -28px; animation-delay: 1s }
-    .chip-bl { bottom: 60px; left: -40px; animation-delay: 2s }
-    .chip-br { bottom: 20px; right: -30px; animation-delay: 0.5s }
+    .chip-tl {
+      top: -18px;
+      left: -30px;
+      animation-delay: 0s
+    }
+
+    .chip-tr {
+      top: 30px;
+      right: -28px;
+      animation-delay: 1s
+    }
+
+    .chip-bl {
+      bottom: 60px;
+      left: -40px;
+      animation-delay: 2s
+    }
+
+    .chip-br {
+      bottom: 20px;
+      right: -30px;
+      animation-delay: 0.5s
+    }
 
     @keyframes chipFloat {
-      0%, 100% { transform: translateY(0px) }
-      50%       { transform: translateY(-6px) }
+
+      0%,
+      100% {
+        transform: translateY(0px)
+      }
+
+      50% {
+        transform: translateY(-6px)
+      }
     }
 
     .dash-frame {
@@ -797,7 +834,7 @@
       transform: translate(-50%, -50%);
       width: 560px;
       height: 560px;
-      background: radial-gradient(circle, rgba(107, 78, 255, 0.12) 0%, rgba(107, 78, 255, 0.04) 50%, rgba(255,255,255,0) 70%);
+      background: radial-gradient(circle, rgba(107, 78, 255, 0.12) 0%, rgba(107, 78, 255, 0.04) 50%, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%;
       pointer-events: none;
       filter: blur(30px);
@@ -913,20 +950,51 @@
 
     /* Float Animations */
     @keyframes float-y-1 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
     }
+
     @keyframes float-y-2 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
     }
+
     @keyframes float-y-3 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
     }
+
     @keyframes float-y-4 {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     /* FEATURES BENTO */
@@ -963,44 +1031,63 @@
     .bento {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 24px;
       margin-top: 52px
     }
 
     .bento-card {
-      background: #F8F7FF;
-      border: 1.5px solid rgba(107,78,255,0.08);
-      border-radius: 22px;
-      padding: 28px 28px 0;
+      background: var(--white);
+      border: 1px solid rgba(107, 78, 255, 0.08);
+      border-radius: 24px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       transition: all 0.28s;
       position: relative;
-      overflow: hidden
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.01), 0 8px 32px rgba(107,78,255,0.02)
     }
 
     .bento-card:hover {
-      border-color: rgba(107,78,255,0.2);
+      border-color: rgba(107, 78, 255, 0.2);
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(107,78,255,0.10)
+      box-shadow: 0 16px 48px rgba(107, 78, 255, 0.08)
     }
 
-    .bento-card.full {
-      grid-column: span 3;
+    .bento-card.wide {
+      grid-column: span 2;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      padding: 0;
-      min-height: 260px
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      padding: 32px;
+      align-items: center
+    }
+
+    .bento-card.tall {
+      grid-row: span 2
     }
 
     .bento-card-text {
-      padding: 36px 32px
+      padding: 0;
+      margin-bottom: 24px
     }
 
-    .bento-card.full .bento-card-text {
+    .bento-card.wide .bento-card-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 40px 40px
+      padding: 0;
+      margin-bottom: 0
+    }
+
+    .bento-card.wide h3 {
+      font-size: 1.5rem;
+      letter-spacing: -0.8px
+    }
+
+    .bento-card.wide p {
+      max-width: 360px
     }
 
     .bento-card h3 {
@@ -1021,17 +1108,34 @@
     }
 
     .bento-visual {
-      margin-top: 24px;
-      position: relative
+      background: #F5F3FF;
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-grow: 1;
+      transition: background 0.28s;
+    }
+
+    .bento-visual img {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(107, 78, 255, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     /* mini-ui inside cards */
     .bento-mini-ui {
       background: #fff;
-      border: 1px solid rgba(107,78,255,0.1);
+      border: 1px solid rgba(107, 78, 255, 0.1);
       border-radius: 14px 14px 0 0;
       padding: 16px;
-      box-shadow: 0 -2px 24px rgba(107,78,255,0.06)
+      box-shadow: 0 -2px 24px rgba(107, 78, 255, 0.06)
     }
 
     .bento-mini-label {
@@ -1060,7 +1164,9 @@
       font-size: 0.72rem
     }
 
-    .bento-status-row:last-of-type { border-bottom: none }
+    .bento-status-row:last-of-type {
+      border-bottom: none
+    }
 
     .bento-status-dot {
       width: 8px;
@@ -1084,10 +1190,10 @@
     /* project overview table */
     .bento-table {
       background: #fff;
-      border: 1px solid rgba(107,78,255,0.1);
+      border: 1px solid rgba(107, 78, 255, 0.1);
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(107,78,255,0.08)
+      box-shadow: 0 4px 24px rgba(107, 78, 255, 0.08)
     }
 
     .bento-table-head {
@@ -1109,7 +1215,9 @@
       gap: 8px
     }
 
-    .bento-table-row:last-child { border-bottom: none }
+    .bento-table-row:last-child {
+      border-bottom: none
+    }
 
     .mini-board {
       display: flex;
@@ -1314,7 +1422,263 @@
       transform: scale(1.02);
     }
 
-    /* HOW IT WORKS */
+    /* HOW IT WORKS — Sticky Scroll */
+    .hiw-section {
+      padding: 80px 5%;
+    }
+
+    .hiw-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .hiw-header .section-sub {
+      margin: 0 auto;
+      max-width: 540px;
+    }
+
+    .hiw-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* LEFT sticky column */
+    .hiw-sticky-col {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .hiw-visual-shell {
+      position: relative;
+      background: linear-gradient(145deg, #6B4EFF 0%, #9B7BFF 100%);
+      border-radius: 28px;
+      padding: 32px 28px 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(107,78,255,0.25);
+      min-height: 520px;
+    }
+
+    .hiw-visual-shell::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .hiw-visual-shell::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -40px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    /* Individual panels inside the sticky shell */
+    .hiw-panel {
+      position: absolute;
+      inset: 0;
+      padding: 32px 28px 28px;
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hiw-panel.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .hiw-panel-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .hiw-panel-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .hiw-panel-mockup {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+      flex: 1;
+    }
+
+    .hiw-mock-bar {
+      background: #F8FAFC;
+      border-bottom: 1.5px solid #E8E4FF;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hiw-mock-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .hiw-mock-url {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      font-size: 0.5rem;
+      color: var(--ink3);
+      padding: 3px 8px;
+      margin: 0 24px 0 10px;
+    }
+
+    .hiw-mock-body {
+      overflow-y: auto;
+      max-height: 340px;
+    }
+
+    /* RIGHT scroll column */
+    .hiw-steps-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hiw-step {
+      display: flex;
+      gap: 24px;
+      padding: 100px 0 140px; /* Spacious vertical track for better sticky scrolling */
+      border-bottom: 1px solid rgba(107,78,255,0.08);
+      opacity: 0.4;
+      transition: opacity 0.35s ease;
+    }
+
+    .hiw-step:last-child {
+      border-bottom: none;
+      padding-bottom: 80px; /* Adjust last step bottom spacing */
+    }
+
+    .hiw-step.active {
+      opacity: 1;
+    }
+
+    .hiw-step-number {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(107,78,255,0.15);
+      letter-spacing: -2px;
+      flex-shrink: 0;
+      width: 52px;
+      line-height: 1;
+      transition: color 0.35s ease;
+    }
+
+    .hiw-step.active .hiw-step-number {
+      color: var(--violet);
+    }
+
+    .hiw-step-body {
+      flex: 1;
+      padding-top: 4px;
+    }
+
+    .hiw-step-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hiw-step-desc {
+      font-size: 0.9rem;
+      color: var(--ink2);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+
+    .hiw-step-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hiw-tag {
+      background: rgba(107,78,255,0.06);
+      color: var(--violet);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(107,78,255,0.12);
+    }
+
+    .hiw-mobile-visual {
+      display: none; /* Hidden on desktop */
+    }
+
+    @media(max-width:900px) {
+      .hiw-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hiw-sticky-col {
+        display: none; /* Hide shared desktop visual */
+      }
+      .hiw-mobile-visual {
+        display: block; /* Show inline mockups on mobile */
+        margin-top: 24px;
+        background: linear-gradient(145deg, #6B4EFF 0%, #9B7BFF 100%);
+        border-radius: 20px;
+        padding: 24px 20px 20px;
+        box-shadow: 0 16px 36px rgba(107,78,255,0.18);
+      }
+      .hiw-mobile-visual .hiw-panel-mockup {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+      }
+      .hiw-step {
+        opacity: 1;
+        padding: 36px 0;
+        border-bottom: 1px solid rgba(107,78,255,0.1);
+      }
+      .hiw-step-number {
+        color: var(--violet);
+      }
+    }
+
+
     .how-it-works-grid {
       display: grid;
       grid-template-columns: 1.1fr 1.3fr;
@@ -1628,10 +1992,25 @@
       z-index: 10;
     }
 
-    .screw-tl { top: 24px; left: 24px; }
-    .screw-tr { top: 24px; right: 24px; }
-    .screw-bl { bottom: 24px; left: 24px; }
-    .screw-br { bottom: 24px; right: 24px; }
+    .screw-tl {
+      top: 24px;
+      left: 24px;
+    }
+
+    .screw-tr {
+      top: 24px;
+      right: 24px;
+    }
+
+    .screw-bl {
+      bottom: 24px;
+      left: 24px;
+    }
+
+    .screw-br {
+      bottom: 24px;
+      right: 24px;
+    }
 
     /* Watermark text */
     .footer-watermark {
@@ -1686,7 +2065,8 @@
     .footer-email {
       font-size: 1.15rem;
       font-weight: 600;
-      color: #FF7A59; /* Warm orange-coral pop */
+      color: #FF7A59;
+      /* Warm orange-coral pop */
       text-decoration: underline;
       transition: color 0.2s;
     }
@@ -2150,6 +2530,12 @@
         grid-row: span 1
       }
 
+      .bento-card.wide {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+      }
+
       .success-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -2192,15 +2578,45 @@
         height: 20px;
       }
 
-      .coin-slack { left: 4%; top: 58%; }
-      .coin-jira { left: 14%; top: 22%; }
-      .coin-gdrive { left: 24%; top: 40%; }
-      .coin-linear { left: 26%; top: 72%; }
+      .coin-slack {
+        left: 4%;
+        top: 58%;
+      }
 
-      .coin-notion { right: 24%; top: 40%; }
-      .coin-zoom { right: 26%; top: 72%; }
-      .coin-figma { right: 14%; top: 22%; }
-      .coin-trello { right: 4%; top: 58%; }
+      .coin-jira {
+        left: 14%;
+        top: 22%;
+      }
+
+      .coin-gdrive {
+        left: 24%;
+        top: 40%;
+      }
+
+      .coin-linear {
+        left: 26%;
+        top: 72%;
+      }
+
+      .coin-notion {
+        right: 24%;
+        top: 40%;
+      }
+
+      .coin-zoom {
+        right: 26%;
+        top: 72%;
+      }
+
+      .coin-figma {
+        right: 14%;
+        top: 22%;
+      }
+
+      .coin-trello {
+        right: 4%;
+        top: 58%;
+      }
 
       .how-it-works-grid {
         grid-template-columns: 1fr;
@@ -2227,6 +2643,7 @@
           padding: 0;
           width: 100%;
         }
+
         .cta-input {
           background: #FFF;
           border: 1.5px solid rgba(107, 78, 255, 0.12);
@@ -2235,6 +2652,7 @@
           width: 100%;
           box-shadow: 0 4px 12px rgba(107, 78, 255, 0.05);
         }
+
         .cta-submit {
           width: 100%;
           padding: 14px;
@@ -2255,23 +2673,43 @@
         padding: 48px 32px;
         min-height: auto;
       }
+
       .footer-screw {
         width: 4px;
         height: 4px;
       }
-      .screw-tl { top: 16px; left: 16px; }
-      .screw-tr { top: 16px; right: 16px; }
-      .screw-bl { bottom: 16px; left: 16px; }
-      .screw-br { bottom: 16px; right: 16px; }
+
+      .screw-tl {
+        top: 16px;
+        left: 16px;
+      }
+
+      .screw-tr {
+        top: 16px;
+        right: 16px;
+      }
+
+      .screw-bl {
+        bottom: 16px;
+        left: 16px;
+      }
+
+      .screw-br {
+        bottom: 16px;
+        right: 16px;
+      }
+
       .footer-watermark {
         bottom: -20px;
         left: 20px;
       }
+
       .footer-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 32px;
       }
+
       .footer-col-left,
       .footer-col-right {
         align-items: flex-start;
@@ -2352,7 +2790,7 @@
           AI Priority Engine 2.0 is live
         </div>
         <h1 class="hero-h1 fade-up delay-1">Empower Remote Teams<br>with <em>Seamless</em> Productivity.</h1>
-        <p class="hero-sub fade-up delay-2">TaskHive helps teams stay <strong style="font-weight:500;color:var(--ink)">organized</strong>, <strong style="font-weight:500;color:var(--ink)">prioritize</strong> tasks, and meet <strong style="font-weight:500;color:var(--ink)">deadlines</strong> effortlessly — powered by AI that understands how your team works.</p>
+        <p class="hero-sub fade-up delay-2">TaskHive is the <strong style="font-weight:500;color:var(--ink)">AI-powered task manager</strong> built for remote teams — so your team always knows <strong style="font-weight:500;color:var(--ink)">what matters most</strong>, never misses a deadline, and ships without the daily standups that go nowhere.</p>
         <div class="hero-ctas fade-up delay-3">
           <button class="btn-cta-primary">Try TaskHive for Free <span>→</span></button>
           <button class="btn-cta-secondary">📅 Book a Demo</button>
@@ -2366,488 +2804,59 @@
 
       <!-- HERO DASHBOARD MOCKUP -->
       <div class="hero-dashboard fade-up delay-4">
-
-
-
-        <div class="dash-frame" style="border-radius:16px;border:1.5px solid rgba(107,78,255,0.12);box-shadow:0 8px 60px rgba(107,78,255,0.14),0 2px 8px rgba(0,0,0,0.06);overflow:hidden;background:#fff">
-
-          <!-- ── App Top Nav ── -->
-          <div style="background:#fff;border-bottom:1px solid #f0eeff;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px">
-            <div style="display:flex;align-items:center;gap:24px">
-              <!-- Logo -->
-              <div style="display:flex;align-items:center;gap:7px;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:0.95rem;color:#1A0F3C;letter-spacing:-0.3px">
-                <div style="width:28px;height:28px;background:linear-gradient(135deg,#6B4EFF,#B8A6FF);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.7rem">🐝</div>
-                TaskHive
-              </div>
-              <!-- Nav links -->
-              <div style="display:flex;align-items:center;gap:2px">
-                <span style="font-size:0.72rem;font-weight:600;color:#1A0F3C;padding:5px 10px;background:#F5F3FF;border-radius:6px">Dashboard</span>
-                <span style="font-size:0.72rem;color:#9B92C4;padding:5px 10px">My Tasks</span>
-                <span style="font-size:0.72rem;color:#9B92C4;padding:5px 10px">Reporting</span>
-                <span style="font-size:0.72rem;color:#9B92C4;padding:5px 10px">Portfolios</span>
-                <span style="font-size:0.72rem;color:#9B92C4;padding:5px 10px">Goals</span>
-              </div>
-            </div>
-            <!-- Right icons -->
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;border-radius:7px;border:1px solid #f0eeff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#9B92C4">🔍</div>
-              <div style="width:28px;height:28px;border-radius:7px;border:1px solid #f0eeff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#9B92C4">🎤</div>
-              <div style="width:28px;height:28px;border-radius:7px;border:1px solid #f0eeff;display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:#9B92C4">🔔</div>
-              <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#E53E3E,#FF8C69);display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:#fff;font-weight:700;position:relative">
-                SK
-                <div style="position:absolute;top:-2px;right:-2px;width:10px;height:10px;background:#E53E3E;border-radius:50%;border:2px solid #fff;font-size:0.4rem;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">2</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ── Task Boards sub-header ── -->
-          <div style="background:#fff;border-bottom:1px solid #f0eeff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between">
-            <div style="display:flex;align-items:center;gap:16px">
-              <div style="display:flex;align-items:center;gap:6px">
-                <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:0.95rem;font-weight:700;color:#1A0F3C">Task Boards</span>
-                <span style="font-size:0.75rem;color:#9B92C4">✏️</span>
-              </div>
-              <!-- View tabs -->
-              <div style="display:flex;align-items:center;gap:0">
-                <span style="font-size:0.68rem;color:#6B4EFF;font-weight:600;padding:4px 10px;border-bottom:2px solid #6B4EFF">Timeline</span>
-                <span style="font-size:0.68rem;color:#9B92C4;padding:4px 10px">Calendar</span>
-                <span style="font-size:0.68rem;color:#9B92C4;padding:4px 10px">Dashboard</span>
-                <span style="font-size:0.68rem;color:#9B92C4;padding:4px 10px">Progress</span>
-                <span style="font-size:0.68rem;color:#9B92C4;padding:4px 10px">Forms</span>
-                <span style="font-size:0.68rem;color:#9B92C4;padding:4px 10px">More</span>
-              </div>
-            </div>
-            <!-- Team avatars -->
-            <div style="display:flex;align-items:center;gap:6px">
-              <div style="display:flex">
-                <div style="width:24px;height:24px;border-radius:50%;background:#E53E3E;border:2px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700">SK</div>
-                <div style="width:24px;height:24px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700;margin-left:-6px">RK</div>
-                <div style="width:24px;height:24px;border-radius:50%;background:#00D68F;border:2px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700;margin-left:-6px">JL</div>
-                <div style="width:24px;height:24px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700;margin-left:-6px">AL</div>
-                <div style="width:24px;height:24px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:0.5rem;color:#fff;font-weight:700;margin-left:-6px">+5</div>
-              </div>
-              <div style="width:24px;height:24px;border-radius:50%;border:1.5px dashed #9B92C4;display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:#9B92C4">+</div>
-            </div>
-          </div>
-
-          <!-- ── Filter bar ── -->
-          <div style="background:#fff;border-bottom:1px solid #f0eeff;padding:8px 20px;display:flex;align-items:center;gap:8px">
-            <div style="display:flex;align-items:center;gap:0;border:1px solid #e8e4ff;border-radius:8px;overflow:hidden">
-              <div style="padding:5px 10px;background:#F5F3FF;font-size:0.65rem;font-weight:600;color:#6B4EFF;display:flex;align-items:center;gap:4px">⊞ Board View</div>
-              <div style="padding:5px 10px;font-size:0.65rem;color:#9B92C4;display:flex;align-items:center;gap:4px">≡ List View</div>
-            </div>
-            <div style="padding:4px 10px;border:1px solid #e8e4ff;border-radius:6px;font-size:0.65rem;color:#5B4E8A;display:flex;align-items:center;gap:4px">🔒 Limited Access ▾</div>
-            <div style="padding:4px 10px;border:1px solid #e8e4ff;border-radius:6px;font-size:0.65rem;color:#5B4E8A">Owners</div>
-            <div style="padding:4px 10px;border:1px solid #e8e4ff;border-radius:6px;font-size:0.65rem;color:#5B4E8A;display:flex;align-items:center;gap:4px">🐦 Twitter Team</div>
-            <div style="flex:1;padding:4px 12px;border:1px solid #e8e4ff;border-radius:6px;font-size:0.65rem;color:#9B92C4;display:flex;align-items:center;gap:6px">🔍 Search Tasks</div>
-            <div style="margin-left:auto;display:flex;gap:4px">
-              <div style="width:26px;height:26px;border:1px solid #e8e4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#9B92C4">📄</div>
-              <div style="width:26px;height:26px;border:1px solid #e8e4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#9B92C4">≡</div>
-              <div style="width:26px;height:26px;border:1px solid #e8e4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#9B92C4">⊟</div>
-              <div style="width:26px;height:26px;border:1px solid #e8e4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#9B92C4">◎</div>
-              <div style="width:26px;height:26px;border:1px solid #e8e4ff;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:#9B92C4">⊞</div>
-            </div>
-          </div>
-
-          <!-- ── Kanban Board ── -->
-          <div style="background:#F5F3FF;padding:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;overflow:hidden;max-height:340px">
-
-            <!-- helper macro: avatar group -->
-            <!-- TO DO -->
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-                <span style="font-size:0.65rem;font-weight:700;color:#1A0F3C;letter-spacing:0.2px">To Do</span>
-                <span style="font-size:0.75rem;color:#9B92C4">⋯</span>
-              </div>
-
-              <!-- Card 1 -->
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Competitive Analysis</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">SK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4">
-                    <span>💬 12</span><span>📎 0</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 2 -->
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Update Task Status Labels</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">AL</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4">
-                    <span>💬 12</span><span>📎 0</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- IN PROCESS -->
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-                <span style="font-size:0.65rem;font-weight:700;color:#1A0F3C;letter-spacing:0.2px">In Process</span>
-                <span style="font-size:0.75rem;color:#9B92C4">⋯</span>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Dashboard UI Refinement</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">SK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Brainstorming</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">AL</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">SK</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- IN REVIEW -->
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-                <span style="font-size:0.65rem;font-weight:700;color:#1A0F3C;letter-spacing:0.2px">In Review</span>
-                <span style="font-size:0.75rem;color:#9B92C4">⋯</span>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#FEF3C7;color:#92400E;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Review Task Automation Rules</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">SK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07)">
-                <div style="display:inline-block;background:#FEF3C7;color:#92400E;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3">Task priority system setup</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">AL</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">SK</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-
-              <!-- Add task -->
-              <div style="border:1.5px dashed rgba(107,78,255,0.2);border-radius:10px;padding:8px;text-align:center;font-size:0.62rem;color:#9B92C4;cursor:pointer">+ Add new task</div>
-            </div>
-
-            <!-- COMPLETED -->
-            <div style="display:flex;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-                <span style="font-size:0.65rem;font-weight:700;color:#1A0F3C;letter-spacing:0.2px">Completed</span>
-                <span style="font-size:0.75rem;color:#9B92C4">⋯</span>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07);opacity:0.9">
-                <div style="display:inline-block;background:#D1FAE5;color:#065F46;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3;text-decoration:line-through;opacity:0.6">Fix Progress Consistency</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">SK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-
-              <div style="background:#fff;border-radius:10px;padding:12px;box-shadow:0 1px 4px rgba(107,78,255,0.07);opacity:0.9">
-                <div style="display:inline-block;background:#D1FAE5;color:#065F46;font-size:0.57rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.72rem;font-weight:700;color:#1A0F3C;margin-bottom:4px;line-height:1.3;text-decoration:line-through;opacity:0.6">Finalize onboarding flow UI</div>
-                <div style="font-size:0.6rem;color:#9B92C4;line-height:1.5;margin-bottom:8px">Brainstorming brings team members' diverse experience into play.</div>
-                <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px">
-                  <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 7px;border-radius:4px;font-weight:600">Low</span>
-                  <span style="font-size:0.55rem;background:#D1FAE5;color:#065F46;padding:2px 7px;border-radius:4px;font-weight:600">Completed</span>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:flex">
-                    <div style="width:18px;height:18px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">AL</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">RK</div>
-                    <div style="width:18px;height:18px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.42rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-4px">JL</div>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:6px;font-size:0.57rem;color:#9B92C4"><span>💬 12</span><span>📎 0</span></div>
-                </div>
-              </div>
-
-              <!-- Add task -->
-              <div style="border:1.5px dashed rgba(0,214,143,0.3);border-radius:10px;padding:8px;text-align:center;font-size:0.62rem;color:#9B92C4;cursor:pointer">+ Add new task</div>
-            </div>
-
-          </div><!-- /kanban board -->
-
-        </div><!-- /dash-frame -->
+        <img src="hero_kanban.png" alt="TaskHive Kanban Dashboard" style="width:100%;border-radius:20px;box-shadow:0 8px 60px rgba(107,78,255,0.18),0 2px 12px rgba(0,0,0,0.08);display:block;">
       </div><!-- /hero-dashboard -->
     </section>
-
-
     <!-- FEATURES BENTO -->
     <section class="section">
       <div class="section-eyebrow">Why TaskHive?</div>
-      <h2 class="section-h2">Everything your team<br>needs to ship faster.</h2>
-      <p class="section-sub">Built for modern remote teams who can't afford to miss deadlines or lose context across tools.</p>
+      <h2 class="section-h2">Built for the frustrations<br>your team faces daily.</h2>
+      <p class="section-sub">Every feature solves a specific pain — not a capability you'll admire once and never use again.</p>
 
       <div class="bento">
 
         <!-- Card 1: Smart Task Organization -->
         <div class="bento-card">
-          <div class="bento-card-text" style="padding:0 0 0 0">
-            <h3>Smart Task Organization</h3>
-            <p>Create, categorize, and prioritize tasks with ease using flexible lists, boards, and timelines.</p>
+          <div class="bento-card-text">
+            <h3>Stop Wasting Time Deciding What to Do Next</h3>
+            <p>AI Task Prioritization surfaces the work that unblocks your team — automatically. No more Monday morning triage meetings.</p>
           </div>
           <div class="bento-visual">
-            <div class="bento-mini-ui">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-                <div>
-                  <div class="bento-mini-label">Current Total</div>
-                  <div class="bento-mini-title">105 Tasks</div>
-                </div>
-                <div style="display:flex;align-items:center;gap:5px;border:1px solid #e8e4ff;border-radius:8px;padding:5px 10px;font-size:0.65rem;color:var(--violet);font-weight:500">
-                  📅 View Details
-                </div>
-              </div>
-              <div class="bento-status-row">
-                <div style="display:flex;align-items:center;gap:7px">
-                  <div class="bento-status-dot" style="background:#9B92C4"></div>
-                  <span>Not Started</span>
-                </div>
-                <span style="font-weight:600;color:var(--ink)">59 tasks</span>
-              </div>
-              <div class="bento-status-row">
-                <div style="display:flex;align-items:center;gap:7px">
-                  <div class="bento-status-dot" style="background:#6B4EFF"></div>
-                  <span>On Progress</span>
-                </div>
-                <span style="font-weight:600;color:var(--ink)">13 tasks</span>
-              </div>
-              <div class="bento-status-row">
-                <div style="display:flex;align-items:center;gap:7px">
-                  <div class="bento-status-dot" style="background:#FFB347"></div>
-                  <span>Not Started</span>
-                </div>
-                <span style="font-weight:600;color:var(--ink)">83 tasks</span>
-              </div>
-              <div class="bento-status-row">
-                <div style="display:flex;align-items:center;gap:7px">
-                  <div class="bento-status-dot" style="background:#00D68F"></div>
-                  <span>Not Started</span>
-                </div>
-                <span style="font-weight:600;color:var(--ink)">27 tasks</span>
-              </div>
-              <div class="bento-progress-bars">
-                <div class="bento-bar" style="flex:3;background:linear-gradient(90deg,#6B4EFF,#B8A6FF)"></div>
-                <div class="bento-bar" style="flex:1;background:#B8A6FF"></div>
-                <div class="bento-bar" style="flex:1;background:#2D8CFF"></div>
-                <div class="bento-bar" style="flex:0.6;background:#FFB347"></div>
-              </div>
-            </div>
+            <img src="bento_tasks.png" alt="Task statistics UI">
           </div>
         </div>
 
         <!-- Card 2: Automated Workflows -->
         <div class="bento-card">
-          <div class="bento-card-text" style="padding:0 0 0 0">
-            <h3>Automated Workflows</h3>
-            <p>Streamline your workflow with automation for tasks, updates, and reminders.</p>
+          <div class="bento-card-text">
+            <h3>Zero Disruption to Your Existing Workflow</h3>
+            <p>Automated handoffs, status updates, and reminders happen in the background. Your team ships more without adding a single new habit.</p>
           </div>
           <div class="bento-visual">
-            <div class="bento-mini-ui">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-                <span style="font-size:0.85rem;font-weight:700;color:var(--ink)">Assignments</span>
-                <span style="font-size:0.65rem;color:var(--violet);font-weight:500">✏️ Edit</span>
-              </div>
-              <!-- assignment card -->
-              <div style="border:1.5px solid rgba(107,78,255,0.15);border-radius:10px;padding:11px;margin-bottom:10px">
-                <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.55rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:7px">UIUX Design</div>
-                <div style="font-size:0.7rem;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.3">User Journey Mapping &amp; Design System Setup</div>
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="display:inline-block;background:#EDE9FE;color:#6B4EFF;font-size:0.55rem;font-weight:700;padding:2px 8px;border-radius:4px">UIUX Design</div>
-                  <div style="display:flex;align-items:center;gap:5px">
-                    <span style="font-size:0.58rem;color:var(--ink2)">Albert Flores</span>
-                    <div style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#c0475e);font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">AF</div>
-                  </div>
-                </div>
-              </div>
-              <!-- add assignment btn -->
-              <div style="border:1.5px dashed rgba(107,78,255,0.25);border-radius:10px;padding:9px;text-align:center;font-size:0.65rem;color:var(--violet);font-weight:500;display:flex;align-items:center;justify-content:center;gap:5px">
-                <span style="font-size:1rem;line-height:1">+</span> Add new assignment
-              </div>
-            </div>
+            <img src="bento_assignments.png" alt="Assignments UI">
           </div>
         </div>
 
         <!-- Card 3: File & Comment Management -->
-        <div class="bento-card">
-          <div class="bento-card-text" style="padding:0 0 0 0">
-            <h3>File &amp; Comment Management</h3>
-            <p>Consolidate everything with task comments, file attachments, and feedback threads.</p>
+        <div class="bento-card tall">
+          <div class="bento-card-text">
+            <h3>Everyone Sees the Same Truth at the Same Time</h3>
+            <p>Inline comments, files, and feedback threads live inside each task — not scattered across 4 different Slack channels from 3 weeks ago.</p>
           </div>
           <div class="bento-visual">
-            <div class="bento-mini-ui">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-                <div style="display:flex;align-items:center;gap:7px">
-                  <span style="font-size:0.85rem;font-weight:700;color:var(--ink)">New Messages</span>
-                  <span style="background:#6B4EFF;color:#fff;font-size:0.55rem;font-weight:700;padding:2px 6px;border-radius:100px">2</span>
-                </div>
-                <span style="color:#9B92C4;font-size:1rem">⋯</span>
-              </div>
-              <!-- message rows -->
-              <div style="display:flex;flex-direction:column;gap:0">
-                <div style="display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid #f8f7ff">
-                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6B4EFF,#B8A6FF);font-size:0.5rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">HM</div>
-                  <div style="flex:1;min-width:0">
-                    <div style="font-size:0.68rem;font-weight:600;color:var(--ink)">Henry Mason</div>
-                    <div style="font-size:0.6rem;color:#9B92C4">Is Typing....</div>
-                  </div>
-                  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
-                    <span style="background:#6B4EFF;color:#fff;font-size:0.5rem;font-weight:700;padding:1px 5px;border-radius:100px">1</span>
-                    <span style="font-size:0.55rem;color:#9B92C4">9:30 AM</span>
-                  </div>
-                </div>
-                <div style="display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid #f8f7ff">
-                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#00D68F,#0D9373);font-size:0.5rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">MR</div>
-                  <div style="flex:1">
-                    <div style="font-size:0.68rem;font-weight:600;color:var(--ink)">Moni Roy</div>
-                    <div style="font-size:0.6rem;color:#9B92C4">Online</div>
-                  </div>
-                  <span style="font-size:0.55rem;color:#9B92C4">9:30 AM</span>
-                </div>
-                <div style="display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid #f8f7ff">
-                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FF6B9D,#c0475e);font-size:0.5rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">LP</div>
-                  <div style="flex:1;min-width:0">
-                    <div style="font-size:0.68rem;font-weight:600;color:var(--ink)">Liam Parker</div>
-                    <div style="font-size:0.6rem;color:#9B92C4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">"Hey, are we still on track for..."</div>
-                  </div>
-                  <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
-                    <span style="background:#6B4EFF;color:#fff;font-size:0.5rem;font-weight:700;padding:1px 5px;border-radius:100px">1</span>
-                    <span style="font-size:0.55rem;color:#9B92C4">9:30 AM</span>
-                  </div>
-                </div>
-                <div style="display:flex;align-items:center;gap:9px;padding:8px 0">
-                  <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FFB347,#e07b00);font-size:0.5rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0">EC</div>
-                  <div style="flex:1">
-                    <div style="font-size:0.68rem;font-weight:600;color:var(--ink)">Emma Collins</div>
-                    <div style="font-size:0.6rem;color:#9B92C4">Online</div>
-                  </div>
-                  <span style="font-size:0.55rem;color:#9B92C4">9:30 AM</span>
-                </div>
-              </div>
-            </div>
+            <img src="bento_messages.png" alt="New Messages UI">
           </div>
         </div>
-
         <!-- Card 4: Real-Time Progress Tracking (full width) -->
-        <div class="bento-card full">
+        <div class="bento-card wide">
           <!-- Left: text -->
           <div class="bento-card-text">
-            <h3 style="font-size:1.5rem;letter-spacing:-0.8px">Real-Time Progress Tracking</h3>
-            <p style="max-width:340px">Track deadlines, milestones, and performance with live status updates and visual indicators.</p>
+            <h3>Your Team Lead Finally Gets Visibility — Without Asking</h3>
+            <p>Live dashboards update automatically. No status meetings. No "can you send me a quick update?" emails. Just a single source of truth.</p>
           </div>
-          <!-- Right: Project Overview mini-UI -->
-          <div style="background:#EDE9FE;display:flex;align-items:center;justify-content:center;padding:32px">
-            <div class="bento-table" style="width:100%;max-width:420px">
-              <div style="padding:14px 16px;border-bottom:1px solid #f0eeff">
-                <span style="font-size:0.85rem;font-weight:700;color:var(--ink)">Project Overview</span>
-              </div>
-              <div class="bento-table-head">
-                <span style="flex:1">Project Name</span>
-                <span style="width:80px;text-align:right">Team</span>
-              </div>
-              <!-- row 1 -->
-              <div class="bento-table-row">
-                <span style="flex:1;color:var(--ink2)">Support</span>
-                <div style="display:flex;width:80px;justify-content:flex-end">
-                  <div style="width:22px;height:22px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">P</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">SK</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">JL</div>
-                </div>
-              </div>
-              <!-- row 2 -->
-              <div class="bento-table-row">
-                <span style="flex:1;color:var(--ink2)">Marketing project</span>
-                <div style="display:flex;width:80px;justify-content:flex-end">
-                  <div style="width:22px;height:22px;border-radius:50%;background:#FFB347;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">Z</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#E53E3E;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">MR</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">H</div>
-                </div>
-              </div>
-              <!-- row 3 -->
-              <div class="bento-table-row">
-                <span style="flex:1;color:var(--ink2)">Corlax iOS app development</span>
-                <div style="display:flex;width:80px;justify-content:flex-end">
-                  <div style="width:22px;height:22px;border-radius:50%;background:#FF6B9D;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">B</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#6B4EFF;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">M</div>
-                  <div style="width:22px;height:22px;border-radius:50%;background:#00D68F;border:2px solid #fff;font-size:0.45rem;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-left:-5px">F</div>
-                </div>
-              </div>
-            </div>
+          <!-- Right: Project Overview image -->
+          <div class="bento-visual">
+            <img src="bento_projects.png" alt="Project Overview">
           </div>
         </div>
 
@@ -2857,8 +2866,8 @@
     <!-- TOOLS INTEGRATION -->
     <section class="integrations-section">
       <div class="integrations-header">
-        <h2 class="integrations-title">Effortless Tool Integrations</h2>
-        <p class="integrations-subtitle">Add or remove integrations as your needs grow, without slowing down performance.</p>
+        <h2 class="integrations-title">We Play Well With<br>Everything You Already Use</h2>
+        <p class="integrations-subtitle">You don't have to choose between TaskHive and your stack. Slack, Trello, Zoom, Jira — we sit on top of them all. Zero migration. Zero re-training. Just smarter work.</p>
       </div>
 
       <div class="integration-canvas">
@@ -2873,9 +2882,9 @@
         <!-- Center branding node -->
         <div class="center-node">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;">
-            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#6B4EFF"/>
-            <path d="M12 5L5 9v6l7 4 7-4V9l-7-4z" fill="#FFF"/>
-            <path d="M12 8l4 2.3v4.6l-4 2.3-4-2.3v-4.6L12 8z" fill="#6B4EFF"/>
+            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#6B4EFF" />
+            <path d="M12 5L5 9v6l7 4 7-4V9l-7-4z" fill="#FFF" />
+            <path d="M12 8l4 2.3v4.6l-4 2.3-4-2.3v-4.6L12 8z" fill="#6B4EFF" />
           </svg>
           <span class="center-logo-text">TaskHive</span>
         </div>
@@ -2884,70 +2893,72 @@
         <!-- Slack -->
         <div class="integration-coin coin-slack" title="Slack">
           <svg viewBox="0 0 100 100" width="24" height="24">
-            <path d="M 25,50 C 25,43 31,37 38,37 C 45,37 51,43 51,50 C 51,57 45,63 38,63 L 25,63 Z" fill="#36C5F0"/>
-            <path d="M 38,25 C 38,18 44,12 51,12 C 58,12 64,18 64,25 L 64,38 C 64,45 58,51 51,51 C 44,51 38,45 38,38 Z" fill="#2EB67D"/>
-            <path d="M 50,50 C 50,57 56,63 63,63 C 70,63 76,57 76,50 C 76,43 70,37 63,37 L 50,37 Z" fill="#ECB22E"/>
-            <path d="M 63,75 C 63,82 57,88 50,88 C 43,88 37,82 37,75 L 37,62 C 37,55 43,49 50,49 C 57,49 63,55 63,62 Z" fill="#E01E5A"/>
+            <path d="M 25,50 C 25,43 31,37 38,37 C 45,37 51,43 51,50 C 51,57 45,63 38,63 L 25,63 Z" fill="#36C5F0" />
+            <path d="M 38,25 C 38,18 44,12 51,12 C 58,12 64,18 64,25 L 64,38 C 64,45 58,51 51,51 C 44,51 38,45 38,38 Z"
+              fill="#2EB67D" />
+            <path d="M 50,50 C 50,57 56,63 63,63 C 70,63 76,57 76,50 C 76,43 70,37 63,37 L 50,37 Z" fill="#ECB22E" />
+            <path d="M 63,75 C 63,82 57,88 50,88 C 43,88 37,82 37,75 L 37,62 C 37,55 43,49 50,49 C 57,49 63,55 63,62 Z"
+              fill="#E01E5A" />
           </svg>
         </div>
 
         <!-- Jira -->
         <div class="integration-coin coin-jira" title="Jira">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M11.5 3.5l4-4 4 4-4 4-4-4zm-6 6l4-4 4 4-4 4-4-4zm12 0l4-4 4 4-4 4-4-4z" fill="#0052CC"/>
+            <path d="M11.5 3.5l4-4 4 4-4 4-4-4zm-6 6l4-4 4 4-4 4-4-4zm12 0l4-4 4 4-4 4-4-4z" fill="#0052CC" />
           </svg>
         </div>
 
         <!-- Google Drive -->
         <div class="integration-coin coin-gdrive" title="Google Drive">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M8.5 17h11l-3.5-6H5L8.5 17z" fill="#FFC107"/>
-            <path d="M16 11l-4.5-8h-7l4.5 8H16z" fill="#0F9D58"/>
-            <path d="M11.5 3h7L15 11h-7l3.5-8z" fill="#4285F4"/>
+            <path d="M8.5 17h11l-3.5-6H5L8.5 17z" fill="#FFC107" />
+            <path d="M16 11l-4.5-8h-7l4.5 8H16z" fill="#0F9D58" />
+            <path d="M11.5 3h7L15 11h-7l3.5-8z" fill="#4285F4" />
           </svg>
         </div>
 
         <!-- Linear -->
         <div class="integration-coin coin-linear" title="Linear">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="12" fill="#5E6AD2"/>
-            <path d="M6 8h12M6 12h12M6 16h8" stroke="#FFF" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="12" fill="#5E6AD2" />
+            <path d="M6 8h12M6 12h12M6 16h8" stroke="#FFF" stroke-width="2.5" stroke-linecap="round" />
           </svg>
         </div>
 
         <!-- Notion -->
         <div class="integration-coin coin-notion" title="Notion">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="4" fill="#000000"/>
-            <path d="M6 6h2.5l7 8.5V6H18v12h-2.5l-7-8.5V18H6V6z" fill="#FFF"/>
+            <rect width="24" height="24" rx="4" fill="#000000" />
+            <path d="M6 6h2.5l7 8.5V6H18v12h-2.5l-7-8.5V18H6V6z" fill="#FFF" />
           </svg>
         </div>
 
         <!-- Zoom -->
         <div class="integration-coin coin-zoom" title="Zoom">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#2D8CFF"/>
-            <path d="M6 8h8v8H6V8zm10 2l3-2.5v9l-3-2.5v-4z" fill="#FFF"/>
+            <rect width="24" height="24" rx="12" fill="#2D8CFF" />
+            <path d="M6 8h8v8H6V8zm10 2l3-2.5v9l-3-2.5v-4z" fill="#FFF" />
           </svg>
         </div>
 
         <!-- Figma -->
         <div class="integration-coin coin-figma" title="Figma">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 6a3 3 0 110-6h3a3 3 0 013 3 3 3 0 01-3 3h-3z" fill="#F24E1E"/>
-            <path d="M6 6a3 3 0 116 0v3H6a3 3 0 010-3z" fill="#FF7262"/>
-            <path d="M6 12a3 3 0 116 0v3H6a3 3 0 010-3z" fill="#A259FF"/>
-            <path d="M12 18a3 3 0 113-3v3a3 3 0 01-3 3 3 3 0 01-3-3z" fill="#1ABC9C"/>
-            <path d="M18 12a3 3 0 110 6h-3v-6h3z" fill="#18A0FB"/>
+            <path d="M12 6a3 3 0 110-6h3a3 3 0 013 3 3 3 0 01-3 3h-3z" fill="#F24E1E" />
+            <path d="M6 6a3 3 0 116 0v3H6a3 3 0 010-3z" fill="#FF7262" />
+            <path d="M6 12a3 3 0 116 0v3H6a3 3 0 010-3z" fill="#A259FF" />
+            <path d="M12 18a3 3 0 113-3v3a3 3 0 01-3 3 3 3 0 01-3-3z" fill="#1ABC9C" />
+            <path d="M18 12a3 3 0 110 6h-3v-6h3z" fill="#18A0FB" />
           </svg>
         </div>
 
         <!-- Trello -->
         <div class="integration-coin coin-trello" title="Trello">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="3" fill="#0079BF"/>
-            <rect x="4" y="4" width="6" height="12" rx="1.5" fill="#FFF"/>
-            <rect x="14" y="4" width="6" height="6" rx="1.5" fill="#FFF"/>
+            <rect width="24" height="24" rx="3" fill="#0079BF" />
+            <rect x="4" y="4" width="6" height="12" rx="1.5" fill="#FFF" />
+            <rect x="14" y="4" width="6" height="6" rx="1.5" fill="#FFF" />
           </svg>
         </div>
 
@@ -2957,18 +2968,18 @@
     <!-- SOCIAL PROOF / SUCCESS STORIES -->
     <section class="proof">
       <div class="success-header">
-        <h2 class="success-title">Our Success Stories</h2>
-        <p class="success-subtitle">Real-world success stories showcasing growth, performance,<br>and productivity improvements.</p>
+        <h2 class="success-title">Trusted by 100,000+ Teams<br>Around the Globe</h2>
+        <p class="success-subtitle">Real teams. Real deadlines. Real results — not just "improved productivity." See what actually changed.</p>
       </div>
 
       <div class="success-grid">
         <!-- Card 1: Milla Ass -->
         <div class="success-card success-card-gray col-span-2">
-          <p class="testimonial-quote">The team delivered exceptional design quality with a clear understanding of our business goals. The final product exceeded expectations and improved user engagement significantly.</p>
+          <p class="testimonial-quote">"We shipped 2 sprints ahead of schedule in our first quarter using TaskHive. The AI prioritization alone saved our team 4+ hours of planning meetings every week. I stopped asking 'what's blocking you?' — TaskHive already knew."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
-              <span class="testimonial-name">Milla Ass</span>
-              <span class="testimonial-role">Marketer</span>
+              <span class="testimonial-name">Sarah Kim</span>
+              <span class="testimonial-role">Head of Engineering, Corlax</span>
             </div>
             <div class="testimonial-rating">
               <div class="stars-purple">★★★★★</div>
@@ -2979,11 +2990,11 @@
 
         <!-- Card 2: Robert Fox -->
         <div class="success-card success-card-gradient">
-          <p class="testimonial-quote">From concept to execution, everything was handled with precision. Our conversion rate noticeably increased after launch.</p>
+          <p class="testimonial-quote">"Set up in 20 minutes. Our entire Trello board migrated automatically. The team didn't even notice the switch — except that things started moving faster."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
               <span class="testimonial-name">Robert Fox</span>
-              <span class="testimonial-role">Marketer</span>
+              <span class="testimonial-role">Operations Manager, Veracity Labs</span>
             </div>
           </div>
         </div>
@@ -3000,22 +3011,22 @@
 
         <!-- Card 5: Esther Howard -->
         <div class="success-card success-card-gradient">
-          <p class="testimonial-quote">They transformed our ideas into a clean, modern digital experience. Communication was smooth.</p>
+          <p class="testimonial-quote">"I finally have one place where I can see what every team member is working on without sending a single Slack message. That alone is worth the price."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
               <span class="testimonial-name">Esther Howard</span>
-              <span class="testimonial-role">Marketer</span>
+              <span class="testimonial-role">VP of Product, Nomad Studio</span>
             </div>
           </div>
         </div>
 
         <!-- Card 6: Josh Biler -->
         <div class="success-card success-card-gray col-span-2">
-          <p class="testimonial-quote">A reliable partner who truly understands design strategy. Their attention to detail and structured workflow made a real difference. Outstanding UI/UX work. The designs are intuitive, aligning with our users' needs.</p>
+          <p class="testimonial-quote">"Our remote team spans 6 timezones. Before TaskHive, we spent more time syncing than building. Now our standup is 8 minutes and we've reduced missed deadlines by 73% in 3 months. That's not a small thing — that's our reputation."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
-              <span class="testimonial-name">Josh Biler</span>
-              <span class="testimonial-role">Marketer</span>
+              <span class="testimonial-name">Josh Bieler</span>
+              <span class="testimonial-role">CTO, Distributed.io</span>
             </div>
             <div class="testimonial-rating">
               <div class="stars-purple">★★★★★</div>
@@ -3026,214 +3037,377 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section" style="text-align:center">
-      <div class="section-eyebrow">Onboarding</div>
-      <h2 class="section-h2" style="max-width: 600px; margin: 0 auto 14px;">How It Works</h2>
-      <p class="section-sub" style="margin:0 auto 0; max-width: 600px;">Get started in just 3 easy steps with a guided onboarding experience designed for speed and simplicity.</p>
-      
-      <div class="how-it-works-grid">
-        <!-- Left visual (Purple Dashboard mockup) -->
-        <div class="how-it-works-visual">
-          <div class="visual-browser-frame">
-            <!-- Browser header -->
-            <div style="background:#F8FAFC; border-bottom:1.5px solid var(--border); padding:10px; display:flex; align-items:center; gap:8px">
-              <div style="display:flex; gap:6px">
-                <div style="width:10px; height:10px; border-radius:50%; background:#EF4444"></div>
-                <div style="width:10px; height:10px; border-radius:50%; background:#F59E0B"></div>
-                <div style="width:10px; height:10px; border-radius:50%; background:#10B981"></div>
-              </div>
-              <div style="flex:1; background:#FFF; border-radius:6px; height:18px; border:1.5px solid var(--border); margin:0 30px 0 10px; display:flex; align-items:center; padding-left:10px; font-size:0.5rem; color:var(--ink3)">taskhive.com/boards</div>
-            </div>
-            
-            <!-- Browser workspace -->
-            <div style="display:flex; height:460px; background:var(--white); text-align:left">
-              <!-- Sidebar -->
-              <div style="width:110px; background:#F8FAFC; border-right:1.5px solid var(--border); padding:14px; display:flex; flex-direction:column; gap:14px">
-                <div style="font-family:'Bricolage Grotesque',sans-serif; font-size:0.8rem; font-weight:800; color:var(--ink)">TaskHive</div>
-                <div style="display:flex; flex-direction:column; gap:8px">
-                  <div style="height:10px; background:#6B4EFF; border-radius:3px; width:70%"></div>
-                  <div style="height:8px; background:#E2E8F0; border-radius:3px; width:60%"></div>
-                  <div style="height:8px; background:#E2E8F0; border-radius:3px; width:80%"></div>
-                  <div style="height:8px; background:#E2E8F0; border-radius:3px; width:50%"></div>
-                  <div style="height:8px; background:#E2E8F0; border-radius:3px; width:65%"></div>
+    <!-- HOW IT WORKS — Sticky Scroll -->
+    <section class="hiw-section">
+      <div class="hiw-header">
+        <div class="section-eyebrow">Onboarding</div>
+        <h2 class="section-h2">How It Works</h2>
+        <p class="section-sub">Four steps. Zero friction. Your team is productive from day one.</p>
+      </div>
+
+      <div class="hiw-layout">
+
+        <!-- LEFT: Sticky visual panel -->
+        <div class="hiw-sticky-col">
+          <div class="hiw-visual-shell">
+
+            <!-- Step 1 panel: Connect Tools -->
+            <div class="hiw-panel active" data-panel="1">
+              <div class="hiw-panel-eyebrow">Step 01</div>
+              <div class="hiw-panel-title">Connect your tools</div>
+              <div class="hiw-panel-mockup">
+                <div class="hiw-mock-bar">
+                  <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                  <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                  <span class="hiw-mock-dot" style="background:#10B981"></span>
+                  <span class="hiw-mock-url">taskhive.com/integrations</span>
+                </div>
+                <div class="hiw-mock-body" style="padding:20px">
+                  <div style="font-size:0.75rem;font-weight:700;color:var(--ink);margin-bottom:14px">Integration Hub <span style="font-size:0.6rem;color:#10B981;font-weight:700;margin-left:8px">● 2 Connected</span></div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">💬</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Slack</span></div>
+                      <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">Active</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">📋</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Trello</span></div>
+                      <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">Active</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">📁</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Google Drive</span></div>
+                      <span style="font-size:0.6rem;background:#EDE9FE;color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">+ Connect</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                      <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">🗂️</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Jira</span></div>
+                      <span style="font-size:0.6rem;background:#EDE9FE;color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">+ Connect</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              
-              <!-- Content -->
-              <div style="flex:1; padding:16px; background:var(--white)">
-                <div style="font-family:'Bricolage Grotesque',sans-serif; font-size:0.95rem; font-weight:800; color:var(--ink); margin-bottom:12px">Task Boards</div>
-                
-                <!-- Mini Kanban Board column -->
-                <div style="background:#F8FAFC; border-radius:8px; padding:10px; border:1.5px solid var(--border); width:135px">
-                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px">
-                    <div style="font-size:0.6rem; font-weight:700; color:var(--ink2)">TO DO</div>
-                    <div style="font-size:0.55rem; background:#6B4EFF; color:#FFF; border-radius:4px; padding:1px 4px; font-weight:700">3</div>
+            </div>
+
+            <!-- Step 2 panel: Organize -->
+            <div class="hiw-panel" data-panel="2">
+              <div class="hiw-panel-eyebrow">Step 02</div>
+              <div class="hiw-panel-title">Organize into boards</div>
+              <div class="hiw-panel-mockup">
+                <div class="hiw-mock-bar">
+                  <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                  <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                  <span class="hiw-mock-dot" style="background:#10B981"></span>
+                  <span class="hiw-mock-url">taskhive.com/boards</span>
+                </div>
+                <div class="hiw-mock-body" style="padding:16px">
+                  <div style="font-size:0.75rem;font-weight:700;color:var(--ink);margin-bottom:12px">Project Workspace</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+                    <div style="background:#F5F3FF;border-radius:8px;padding:10px">
+                      <div style="font-size:0.58rem;font-weight:700;color:var(--violet);margin-bottom:6px">TO DO</div>
+                      <div style="background:#fff;border-radius:6px;padding:6px;margin-bottom:4px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">Setup Backlog</div>
+                      <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">User Research</div>
+                    </div>
+                    <div style="background:#F0FDF4;border-radius:8px;padding:10px">
+                      <div style="font-size:0.58rem;font-weight:700;color:#065F46;margin-bottom:6px">IN PROGRESS</div>
+                      <div style="background:#fff;border-radius:6px;padding:6px;margin-bottom:4px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">Design UI Mock</div>
+                      <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">API Integration</div>
+                    </div>
+                    <div style="background:#F0F9FF;border-radius:8px;padding:10px">
+                      <div style="font-size:0.58rem;font-weight:700;color:#0369A1;margin-bottom:6px">DONE</div>
+                      <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border);opacity:0.6;text-decoration:line-through">Kickoff</div>
+                    </div>
                   </div>
-                  
-                  <!-- Card 1 -->
-                  <div style="background:#FFF; border:1.5px solid var(--border); border-radius:6px; padding:8px; display:flex; flex-direction:column; gap:4px; margin-bottom:8px">
-                    <div style="font-size:0.48rem; background:rgba(107,78,255,0.08); color:var(--violet); font-weight:700; border-radius:4px; padding:1px 3px; width:fit-content">UIUX Design</div>
-                    <div style="font-size:0.58rem; font-weight:700; color:var(--ink); line-height:1.2">Competitive Analysis</div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px">
-                      <div style="height:8px; width:30px; background:#F1F5F9; border-radius:2px"></div>
-                      <div style="display:flex">
-                        <div style="width:12px; height:12px; border-radius:50%; background:#6B4EFF; border:1px solid #FFF"></div>
-                        <div style="width:12px; height:12px; border-radius:50%; background:#34D399; border:1px solid #FFF; margin-left:-3px"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 panel: AI Prioritize -->
+            <div class="hiw-panel" data-panel="3">
+              <div class="hiw-panel-eyebrow">Step 03</div>
+              <div class="hiw-panel-title">Let AI prioritize</div>
+              <div class="hiw-panel-mockup">
+                <div class="hiw-mock-bar">
+                  <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                  <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                  <span class="hiw-mock-dot" style="background:#10B981"></span>
+                  <span class="hiw-mock-url">taskhive.com/smart-queue</span>
+                </div>
+                <div class="hiw-mock-body" style="padding:16px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                    <div style="font-size:0.75rem;font-weight:700;color:var(--ink)">Smart Queue</div>
+                    <div style="font-size:0.58rem;background:rgba(107,78,255,0.1);color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">✨ AI Active</div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:6px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#FFF7ED;padding:10px 12px;border-radius:8px;border:1.5px solid #FDBA74">
+                      <div>
+                        <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Review API Schema Docs</div>
+                        <div style="font-size:0.55rem;color:#9B92C4;margin-top:2px">Blocks 3 other tasks</div>
                       </div>
+                      <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 6px;border-radius:100px;font-weight:700">🔥 Urgent</span>
                     </div>
-                  </div>
-                  
-                  <!-- Card 2 -->
-                  <div style="background:#FFF; border:1.5px solid var(--border); border-radius:6px; padding:8px; display:flex; flex-direction:column; gap:4px">
-                    <div style="font-size:0.48rem; background:rgba(0,214,143,0.08); color:#0D9373; font-weight:700; border-radius:4px; padding:1px 3px; width:fit-content">Research</div>
-                    <div style="font-size:0.58rem; font-weight:700; color:var(--ink); line-height:1.2">User Interviews</div>
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px">
-                      <div style="height:8px; width:35px; background:#F1F5F9; border-radius:2px"></div>
-                      <div style="width:12px; height:12px; border-radius:50%; background:#F59E0B; border:1px solid #FFF"></div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F5F3FF;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(107,78,255,0.2)">
+                      <div>
+                        <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Finalize onboarding flow</div>
+                        <div style="font-size:0.55rem;color:#9B92C4;margin-top:2px">High impact, low effort</div>
+                      </div>
+                      <span style="font-size:0.55rem;background:rgba(107,78,255,0.1);color:var(--violet);padding:2px 6px;border-radius:100px;font-weight:700">✨ AI Priority</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 12px;border-radius:8px;border:1.5px solid var(--border)">
+                      <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Write release notes</div>
+                      <span style="font-size:0.55rem;color:#9B92C4;font-weight:600">Later</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Step 4 panel: Ship Together -->
+            <div class="hiw-panel" data-panel="4">
+              <div class="hiw-panel-eyebrow">Step 04</div>
+              <div class="hiw-panel-title">Ship together</div>
+              <div class="hiw-panel-mockup">
+                <div class="hiw-mock-bar">
+                  <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                  <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                  <span class="hiw-mock-dot" style="background:#10B981"></span>
+                  <span class="hiw-mock-url">taskhive.com/sprint</span>
+                </div>
+                <div class="hiw-mock-body" style="padding:16px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                    <div style="font-size:0.75rem;font-weight:700;color:var(--ink)">Sprint Progress</div>
+                    <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">🚀 Shipped!</span>
+                  </div>
+                  <div style="margin-bottom:14px">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                      <span style="font-size:0.6rem;color:var(--ink2);font-weight:600">Overall Completion</span>
+                      <span style="font-size:0.6rem;font-weight:700;color:#10B981">100%</span>
+                    </div>
+                    <div style="height:8px;background:#F1F5F9;border-radius:100px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#10B981,#34D399);border-radius:100px"></div></div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center">
+                    <div style="background:#D1FAE5;border-radius:8px;padding:8px">
+                      <div style="font-size:0.9rem;font-weight:800;color:#065F46">24</div>
+                      <div style="font-size:0.52rem;color:#065F46;font-weight:600">Tasks Done</div>
+                    </div>
+                    <div style="background:#EDE9FE;border-radius:8px;padding:8px">
+                      <div style="font-size:0.9rem;font-weight:800;color:var(--violet)">4.2d</div>
+                      <div style="font-size:0.52rem;color:var(--violet);font-weight:600">Avg. Velocity</div>
+                    </div>
+                    <div style="background:#FEF3C7;border-radius:8px;padding:8px">
+                      <div style="font-size:0.9rem;font-weight:800;color:#92400E">0</div>
+                      <div style="font-size:0.52rem;color:#92400E;font-weight:600">Blockers</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        
-        <!-- Right steps list -->
-        <div class="how-it-works-steps">
-          
-          <!-- Step 1: Connect Tools -->
-          <div class="how-it-works-step">
-            <div class="step-header">
-              <div class="step-badge">01</div>
-              <div class="step-text-container">
-                <span class="step-title">Connect your tools</span>
-                <span class="step-desc">You don't start from scratch. You start from where you are.</span>
+
+        <!-- RIGHT: Scrollable steps -->
+        <div class="hiw-steps-col">
+
+          <div class="hiw-step" data-step="1">
+            <div class="hiw-step-number">01</div>
+            <div class="hiw-step-body">
+              <h3 class="hiw-step-title">Connect your tools</h3>
+              <p class="hiw-step-desc">You don't start from scratch. You start from where you are. Connect Slack, Jira, Trello, and 30+ tools in minutes — zero migration, zero re-training.</p>
+              <div class="hiw-step-tags">
+                <span class="hiw-tag">💬 Slack</span>
+                <span class="hiw-tag">📋 Trello</span>
+                <span class="hiw-tag">🗂️ Jira</span>
+                <span class="hiw-tag">📁 Google Drive</span>
               </div>
-            </div>
-            
-            <!-- Graphic: Connect Tools -->
-            <div class="step-graphic" style="display: block;">
-              <div class="graphic-panel" style="width: 100%;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px">
-                  <span class="graphic-title">Integration Hub</span>
-                  <span style="font-size:0.55rem; color:#10B981; font-weight:700">● 2 Connected</span>
-                </div>
-                <div style="display:flex; gap:10px">
-                  <!-- Slack row -->
-                  <div style="flex:1; display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; padding:6px 10px; border-radius:6px; border:1px solid var(--border)">
-                    <div style="display:flex; align-items:center; gap:6px">
-                      <span style="font-size:0.75rem">💬</span>
-                      <span style="font-weight:700; font-size:0.6rem; color:var(--ink)">Slack</span>
+              <div class="hiw-mobile-visual">
+                <div class="hiw-panel-mockup">
+                  <div class="hiw-mock-bar">
+                    <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                    <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                    <span class="hiw-mock-dot" style="background:#10B981"></span>
+                    <span class="hiw-mock-url">taskhive.com/integrations</span>
+                  </div>
+                  <div class="hiw-mock-body" style="padding:20px">
+                    <div style="font-size:0.75rem;font-weight:700;color:var(--ink);margin-bottom:14px">Integration Hub <span style="font-size:0.6rem;color:#10B981;font-weight:700;margin-left:8px">● 2 Connected</span></div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">💬</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Slack</span></div>
+                        <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">Active</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">📋</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Trello</span></div>
+                        <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">Active</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">📁</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Google Drive</span></div>
+                        <span style="font-size:0.6rem;background:#EDE9FE;color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">+ Connect</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border)">
+                        <div style="display:flex;align-items:center;gap:8px"><span style="font-size:1.1rem">🗂️</span><span style="font-weight:700;font-size:0.75rem;color:var(--ink)">Jira</span></div>
+                        <span style="font-size:0.6rem;background:#EDE9FE;color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">+ Connect</span>
+                      </div>
                     </div>
-                    <span style="font-size:0.55rem; color:#10B981; font-weight:700">Active</span>
-                  </div>
-                  <!-- Trello row -->
-                  <div style="flex:1; display:flex; justify-content:space-between; align-items:center; background:#F8FAFC; padding:6px 10px; border-radius:6px; border:1px solid var(--border)">
-                    <div style="display:flex; align-items:center; gap:6px">
-                      <span style="font-size:0.75rem">📋</span>
-                      <span style="font-weight:700; font-size:0.6rem; color:var(--ink)">Trello</span>
-                    </div>
-                    <span style="font-size:0.55rem; color:#10B981; font-weight:700">Active</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Step 2: Organize -->
-          <div class="how-it-works-step">
-            <div class="step-header">
-              <div class="step-badge">02</div>
-              <div class="step-text-container">
-                <span class="step-title">Organize into boards</span>
-                <span class="step-desc">This will feel familiar. You've seen this before.</span>
-              </div>
-            </div>
-            
-            <!-- Graphic: Organize -->
-            <div class="step-graphic" style="display: block;">
-              <div class="graphic-panel" style="width: 100%;">
-                <span class="graphic-title" style="display:block; margin-bottom:6px">Project Workspace</span>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
-                  <!-- Col 1 -->
-                  <div style="background:#F8FAFC; border-radius:6px; padding:6px; border:1px solid var(--border)">
-                    <div style="font-weight:700; font-size:0.55rem; color:var(--ink2); margin-bottom:4px">To Do</div>
-                    <div style="background:#FFF; border:1px solid var(--border); border-radius:4px; padding:4px; font-size:0.52rem; font-weight:700; color:var(--ink)">Setup Backlog</div>
-                  </div>
-                  <!-- Col 2 -->
-                  <div style="background:#F8FAFC; border-radius:6px; padding:6px; border:1px solid var(--border)">
-                    <div style="font-weight:700; font-size:0.55rem; color:var(--ink2); margin-bottom:4px">In Progress</div>
-                    <div style="background:#FFF; border:1px solid var(--border); border-radius:4px; padding:4px; font-size:0.52rem; font-weight:700; color:var(--ink)">Design UI Mock</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Step 3: AI Prioritize -->
-          <div class="how-it-works-step">
-            <div class="step-header">
-              <div class="step-badge">03</div>
-              <div class="step-text-container">
-                <span class="step-title">Let AI prioritize</span>
-                <span class="step-desc">You don't have to do anything new. The AI does the new thing.</span>
-              </div>
-            </div>
-            
-            <!-- Graphic: AI Prioritize -->
-            <div class="step-graphic" style="display: block;">
-              <div class="graphic-panel" style="width: 100%;">
-                <span class="graphic-title" style="display:block; margin-bottom:6px">Smart Queue</span>
-                <div style="background:#F8FAFC; border-radius:6px; padding:8px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center">
-                  <div>
-                    <div style="font-weight:700; font-size:0.58rem; color:var(--ink); margin-bottom:2px">Review API Schema Docs</div>
-                    <div style="height:6px; width:45px; background:#E2E8F0; border-radius:3px"></div>
-                  </div>
-                  <div style="background:rgba(107,78,255,0.1); color:var(--violet); font-size:0.52rem; font-weight:700; padding:2px 6px; border-radius:12px; display:flex; align-items:center; gap:2px">
-                    <span>✨</span> AI Priority
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Step 4: Ship Together -->
-          <div class="how-it-works-step">
-            <div class="step-header">
-              <div class="step-badge">04</div>
-              <div class="step-text-container">
-                <span class="step-title">Ship together</span>
-                <span class="step-desc">This is the reward. This is why you're doing this.</span>
+          <div class="hiw-step" data-step="2">
+            <div class="hiw-step-number">02</div>
+            <div class="hiw-step-body">
+              <h3 class="hiw-step-title">Organize into boards</h3>
+              <p class="hiw-step-desc">This will feel familiar. Drag tasks between columns, assign owners, set due dates. Every board auto-syncs across your whole team in real time.</p>
+              <div class="hiw-step-tags">
+                <span class="hiw-tag">📌 Kanban</span>
+                <span class="hiw-tag">📅 Timeline</span>
+                <span class="hiw-tag">🔄 Real-time sync</span>
               </div>
-            </div>
-            
-            <!-- Graphic: Ship Together -->
-            <div class="step-graphic" style="display: block;">
-              <div class="graphic-panel" style="width: 100%;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
-                  <span class="graphic-title">Sprint Progress</span>
-                  <span style="font-size:0.55rem; color:#10B981; font-weight:700">100% Shipped</span>
-                </div>
-                <div style="width:100%; background:#F1F5F9; height:8px; border-radius:4px; overflow:hidden">
-                  <div style="background:#10B981; width:100%; height:100%"></div>
+              <div class="hiw-mobile-visual">
+                <div class="hiw-panel-mockup">
+                  <div class="hiw-mock-bar">
+                    <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                    <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                    <span class="hiw-mock-dot" style="background:#10B981"></span>
+                    <span class="hiw-mock-url">taskhive.com/boards</span>
+                  </div>
+                  <div class="hiw-mock-body" style="padding:16px">
+                    <div style="font-size:0.75rem;font-weight:700;color:var(--ink);margin-bottom:12px">Project Workspace</div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+                      <div style="background:#F5F3FF;border-radius:8px;padding:10px">
+                        <div style="font-size:0.58rem;font-weight:700;color:var(--violet);margin-bottom:6px">TO DO</div>
+                        <div style="background:#fff;border-radius:6px;padding:6px;margin-bottom:4px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">Setup Backlog</div>
+                        <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">User Research</div>
+                      </div>
+                      <div style="background:#F0FDF4;border-radius:8px;padding:10px">
+                        <div style="font-size:0.58rem;font-weight:700;color:#065F46;margin-bottom:6px">IN PROGRESS</div>
+                        <div style="background:#fff;border-radius:6px;padding:6px;margin-bottom:4px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">Design UI Mock</div>
+                        <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border)">API Integration</div>
+                      </div>
+                      <div style="background:#F0F9FF;border-radius:8px;padding:10px">
+                        <div style="font-size:0.58rem;font-weight:700;color:#0369A1;margin-bottom:6px">DONE</div>
+                        <div style="background:#fff;border-radius:6px;padding:6px;font-size:0.55rem;font-weight:700;color:var(--ink);border:1px solid var(--border);opacity:0.6;text-decoration:line-through">Kickoff</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
+          <div class="hiw-step" data-step="3">
+            <div class="hiw-step-number">03</div>
+            <div class="hiw-step-body">
+              <h3 class="hiw-step-title">Let AI prioritize</h3>
+              <p class="hiw-step-desc">You don't have to do anything new. The AI does the new thing. Every morning, Smart Queue surfaces the exact tasks that unblock your team — ranked by impact, not noise.</p>
+              <div class="hiw-step-tags">
+                <span class="hiw-tag">✨ AI Priority Engine</span>
+                <span class="hiw-tag">🔥 Blocker Detection</span>
+              </div>
+              <div class="hiw-mobile-visual">
+                <div class="hiw-panel-mockup">
+                  <div class="hiw-mock-bar">
+                    <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                    <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                    <span class="hiw-mock-dot" style="background:#10B981"></span>
+                    <span class="hiw-mock-url">taskhive.com/smart-queue</span>
+                  </div>
+                  <div class="hiw-mock-body" style="padding:16px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                      <div style="font-size:0.75rem;font-weight:700;color:var(--ink)">Smart Queue</div>
+                      <div style="font-size:0.58rem;background:rgba(107,78,255,0.1);color:var(--violet);padding:3px 8px;border-radius:100px;font-weight:700">✨ AI Active</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#FFF7ED;padding:10px 12px;border-radius:8px;border:1.5px solid #FDBA74">
+                        <div>
+                          <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Review API Schema Docs</div>
+                          <div style="font-size:0.55rem;color:#9B92C4;margin-top:2px">Blocks 3 other tasks</div>
+                        </div>
+                        <span style="font-size:0.55rem;background:#FEF3C7;color:#92400E;padding:2px 6px;border-radius:100px;font-weight:700">🔥 Urgent</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F5F3FF;padding:10px 12px;border-radius:8px;border:1.5px solid rgba(107,78,255,0.2)">
+                        <div>
+                          <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Finalize onboarding flow</div>
+                          <div style="font-size:0.55rem;color:#9B92C4;margin-top:2px">High impact, low effort</div>
+                        </div>
+                        <span style="font-size:0.55rem;background:rgba(107,78,255,0.1);color:var(--violet);padding:2px 6px;border-radius:100px;font-weight:700">✨ AI Priority</span>
+                      </div>
+                      <div style="display:flex;justify-content:space-between;align-items:center;background:#F8FAFC;padding:10px 12px;border-radius:8px;border:1.5px solid var(--border)">
+                        <div style="font-size:0.65rem;font-weight:700;color:var(--ink)">Write release notes</div>
+                        <span style="font-size:0.55rem;color:#9B92C4;font-weight:600">Later</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hiw-step" data-step="4">
+            <div class="hiw-step-number">04</div>
+            <div class="hiw-step-body">
+              <h3 class="hiw-step-title">Ship together</h3>
+              <p class="hiw-step-desc">This is the reward. Sprint dashboards update live. Leaders get visibility without asking. Teams hit deadlines without the meetings. That's what TaskHive is built for.</p>
+              <div class="hiw-step-tags">
+                <span class="hiw-tag">🚀 Sprint Tracking</span>
+                <span class="hiw-tag">📊 Live Dashboards</span>
+                <span class="hiw-tag">🎯 Zero Blockers</span>
+              </div>
+              <div class="hiw-mobile-visual">
+                <div class="hiw-panel-mockup">
+                  <div class="hiw-mock-bar">
+                    <span class="hiw-mock-dot" style="background:#EF4444"></span>
+                    <span class="hiw-mock-dot" style="background:#F59E0B"></span>
+                    <span class="hiw-mock-dot" style="background:#10B981"></span>
+                    <span class="hiw-mock-url">taskhive.com/sprint</span>
+                  </div>
+                  <div class="hiw-mock-body" style="padding:16px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+                      <div style="font-size:0.75rem;font-weight:700;color:var(--ink)">Sprint Progress</div>
+                      <span style="font-size:0.6rem;background:#D1FAE5;color:#065F46;padding:3px 8px;border-radius:100px;font-weight:700">🚀 Shipped!</span>
+                    </div>
+                    <div style="margin-bottom:14px">
+                      <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                        <span style="font-size:0.6rem;color:var(--ink2);font-weight:600">Overall Completion</span>
+                        <span style="font-size:0.6rem;font-weight:700;color:#10B981">100%</span>
+                      </div>
+                      <div style="height:8px;background:#F1F5F9;border-radius:100px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#10B981,#34D399);border-radius:100px"></div></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center">
+                      <div style="background:#D1FAE5;border-radius:8px;padding:8px">
+                        <div style="font-size:0.9rem;font-weight:800;color:#065F46">24</div>
+                        <div style="font-size:0.52rem;color:#065F46;font-weight:600">Tasks Done</div>
+                      </div>
+                      <div style="background:#EDE9FE;border-radius:8px;padding:8px">
+                        <div style="font-size:0.9rem;font-weight:800;color:var(--violet)">4.2d</div>
+                        <div style="font-size:0.52rem;color:var(--violet);font-weight:600">Avg. Velocity</div>
+                      </div>
+                      <div style="background:#FEF3C7;border-radius:8px;padding:8px">
+                        <div style="font-size:0.9rem;font-weight:800;color:#92400E">0</div>
+                        <div style="font-size:0.52rem;color:#92400E;font-weight:600">Blockers</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
+
     <!-- CTA BANNER -->
     <div class="cta-banner">
-      <h2>Start Your Free Trial Today</h2>
-      <p>No credit card required. Cancel anytime. Join 100,000+ teams already shipping faster.</p>
-      
+      <h2>Start Shipping Faster.<br>Today.</h2>
+      <p>No credit card required. Cancel anytime. Join 100,000+ teams who stopped missing deadlines.</p>
+
       <div class="cta-pill-row">
-        <input type="email" class="cta-input" placeholder="Your email address">
-        <button class="cta-submit">Get Started</button>
+        <input type="email" class="cta-input" placeholder="Your work email address">
+        <button class="cta-submit">Start Free Trial →</button>
+      </div>
+      <div style="margin-top: 20px; display: flex; align-items: center; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <span style="font-size:0.78rem; color:#64748B; font-weight:400">Have a larger team?</span>
+        <button onclick="showPageByName('pricing')" style="background:none; border:1.5px solid rgba(107,78,255,0.25); color:var(--ink2); padding:8px 20px; border-radius:100px; font-family:'Plus Jakarta Sans',sans-serif; font-size:0.82rem; font-weight:600; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--violet)';this.style.color='var(--violet)'" onmouseout="this.style.borderColor='rgba(107,78,255,0.25)';this.style.color='var(--ink2)'">View Enterprise Plans →</button>
       </div>
     </div>
 
@@ -3288,7 +3462,7 @@
       <!-- BASIC -->
       <div class="p-card">
         <div class="p-plan">Basic</div>
-        <div class="p-desc">For small teams getting started with organized, structured task management.</div>
+        <div class="p-desc">This works. You'll love it. And you'll outgrow it — that's the point. Start here, upgrade when you're ready.</div>
         <div class="p-price">
           <span class="p-amount" id="p-basic">$10</span>
           <span class="p-per">/user/month</span>
@@ -3327,8 +3501,7 @@
       <div class="p-card featured">
         <div class="popular-chip">✦ Most Popular</div>
         <div class="p-plan featured-label">Pro</div>
-        <div class="p-desc" style="color:rgba(255,255,255,0.55)">For growing teams who need advanced visibility,
-          analytics, and customization.</div>
+        <div class="p-desc" style="color:rgba(255,255,255,0.55)">This is where real teams live. Complete visibility, AI-powered prioritization, and every integration your team already uses — all in one place.</div>
         <div class="p-price">
           <span class="p-amount light" id="p-pro">$20</span>
           <span class="p-per" style="color:rgba(255,255,255,0.4)">/user/month</span>
@@ -3371,8 +3544,7 @@
       <!-- ENTERPRISE -->
       <div class="p-card">
         <div class="p-plan">Enterprise</div>
-        <div class="p-desc">For large organizations where security, control, and white-glove support are non-negotiable.
-        </div>
+        <div class="p-desc">For organizations where security, compliance, and dedicated support aren't optional. Custom everything — pricing, onboarding, SLAs.</div>
         <div class="p-price">
           <span class="p-amount" style="font-size:2.2rem">Custom</span>
         </div>
@@ -3506,6 +3678,48 @@
   </div>
 
   <script>
+    /* ─── HOW IT WORKS — Sticky Scroll Observer ─── */
+    (function () {
+      function initHIW() {
+        const steps = document.querySelectorAll('.hiw-step');
+        const panels = document.querySelectorAll('.hiw-panel');
+
+        if (!steps.length || !panels.length) return;
+
+        function activateStep(index) {
+          steps.forEach((s, i) => s.classList.toggle('active', i === index));
+          panels.forEach((p, i) => p.classList.toggle('active', i === index));
+        }
+
+        // Start with step 1 active
+        activateStep(0);
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const idx = parseInt(entry.target.dataset.step, 10) - 1;
+              activateStep(idx);
+            }
+          });
+        }, {
+          rootMargin: '-30% 0px -50% 0px',
+          threshold: 0
+        });
+
+        steps.forEach(step => observer.observe(step));
+      }
+
+      // Run after DOM is ready; also re-run if page switches (SPA-style)
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHIW);
+      } else {
+        initHIW();
+      }
+
+      // Re-init on any page show (for the SPA nav in this site)
+      document.addEventListener('click', () => setTimeout(initHIW, 80));
+    })();
+
     function showPage(id, btn) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
