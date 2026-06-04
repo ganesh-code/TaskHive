@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TaskHive — AI Task Management for Remote Teams</title>
+  <link rel="icon" type="image/svg+xml" href="LogoTaskhire.svg">
   <link
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet">
@@ -805,11 +806,19 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
       border-radius: 50%;
       border: 1.5px dashed rgba(107, 78, 255, 0.06);
       pointer-events: none;
       z-index: 1;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.6);
+      transition: transform 1.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 1.2s ease;
+    }
+
+    .integrations-section.revealed .orbit-ring {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .orbit-ring-1 {
@@ -831,7 +840,6 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
       width: 560px;
       height: 560px;
       background: radial-gradient(circle, rgba(107, 78, 255, 0.12) 0%, rgba(107, 78, 255, 0.04) 50%, rgba(255, 255, 255, 0) 70%);
@@ -839,13 +847,21 @@
       pointer-events: none;
       filter: blur(30px);
       z-index: 0;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+      transition: transform 1.5s ease-out,
+                  opacity 1.5s ease-out;
+    }
+
+    .integrations-section.revealed .orbit-glow {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
 
     .center-node {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
       z-index: 10;
       background: var(--white);
       border: 1.5px solid var(--border);
@@ -855,10 +871,19 @@
       align-items: center;
       gap: 12px;
       box-shadow: var(--shadow2);
-      transition: transform 0.3s;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 0.6s ease;
     }
 
-    .center-node:hover {
+    .integrations-section.revealed .center-node {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.3s ease, opacity 0.6s ease;
+    }
+
+    .integrations-section.revealed .center-node:hover {
       transform: translate(-50%, -52%) scale(1.02);
     }
 
@@ -889,63 +914,100 @@
       box-shadow: 0 8px 30px rgba(107, 78, 255, 0.1);
       cursor: pointer;
       z-index: 5;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      
+      /* Hidden state under TaskHive center */
+      opacity: 0;
+      transform: scale(0);
+      transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 0.8s ease;
     }
 
-    .integration-coin:hover {
+    /* Start positions under TaskHive */
+    .coin-slack,
+    .coin-jira,
+    .coin-gdrive,
+    .coin-linear {
+      left: calc(50% - 29px);
+      top: calc(50% - 29px);
+    }
+
+    .coin-notion,
+    .coin-zoom,
+    .coin-figma,
+    .coin-trello {
+      right: calc(50% - 29px);
+      top: calc(50% - 29px);
+    }
+
+    /* Revealed positions */
+    .integrations-section.revealed .integration-coin {
+      opacity: 1;
+      transform: scale(1);
+      transition: left 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  right 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  top 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 0.8s ease;
+    }
+
+    .integrations-section.revealed .integration-coin:hover {
       transform: scale(1.15) !important;
       border-color: rgba(107, 78, 255, 0.3);
       box-shadow: 0 12px 36px rgba(107, 78, 255, 0.2);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
-    /* Positions for Left Coins */
-    .coin-slack {
+    /* Positions & float animations for Left Coins */
+    .integrations-section.revealed .coin-slack {
       left: 8%;
       top: 55%;
-      animation: float-y-1 6s ease-in-out infinite;
+      animation: float-y-1 6s ease-in-out infinite 0.8s;
     }
 
-    .coin-jira {
+    .integrations-section.revealed .coin-jira {
       left: 18%;
       top: 25%;
-      animation: float-y-2 7s ease-in-out infinite 0.5s;
+      animation: float-y-2 7s ease-in-out infinite 1.3s;
     }
 
-    .coin-gdrive {
+    .integrations-section.revealed .coin-gdrive {
       left: 30%;
       top: 40%;
-      animation: float-y-3 5s ease-in-out infinite 1s;
+      animation: float-y-3 5s ease-in-out infinite 1.8s;
     }
 
-    .coin-linear {
+    .integrations-section.revealed .coin-linear {
       left: 25%;
       top: 72%;
-      animation: float-y-4 8s ease-in-out infinite 1.5s;
+      animation: float-y-4 8s ease-in-out infinite 2.3s;
     }
 
-    /* Positions for Right Coins */
-    .coin-notion {
+    /* Positions & float animations for Right Coins */
+    .integrations-section.revealed .coin-notion {
       right: 30%;
       top: 40%;
-      animation: float-y-1 6.5s ease-in-out infinite 2s;
+      animation: float-y-1 6.5s ease-in-out infinite 2.8s;
     }
 
-    .coin-zoom {
+    .integrations-section.revealed .coin-zoom {
       right: 25%;
       top: 72%;
-      animation: float-y-2 5.5s ease-in-out infinite 2.5s;
+      animation: float-y-2 5.5s ease-in-out infinite 3.3s;
     }
 
-    .coin-figma {
+    .integrations-section.revealed .coin-figma {
       right: 18%;
       top: 25%;
-      animation: float-y-3 7.5s ease-in-out infinite 3s;
+      animation: float-y-3 7.5s ease-in-out infinite 3.8s;
     }
 
-    .coin-trello {
+    .integrations-section.revealed .coin-trello {
       right: 8%;
       top: 55%;
-      animation: float-y-4 6s ease-in-out infinite 3.5s;
+      animation: float-y-4 6s ease-in-out infinite 4.3s;
     }
 
     /* Float Animations */
@@ -1966,136 +2028,144 @@
 
     /* FOOTER */
     footer {
-      margin: 0 5% 40px;
-      background: #18181A;
-      border-radius: 28px;
-      padding: 80px 80px;
+      margin: 0;
+      background: #FFFFFF;
+      border-radius: 0;
+      padding: 80px 8% 0;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: stretch;
-      min-height: 280px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      color: #FFF;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      gap: 48px;
+      color: var(--ink);
+      border-top: 1px solid var(--border);
       box-sizing: border-box;
     }
 
-    /* Screws/Rivets at the 4 corners */
-    .footer-screw {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      z-index: 10;
-    }
-
-    .screw-tl {
-      top: 24px;
-      left: 24px;
-    }
-
-    .screw-tr {
-      top: 24px;
-      right: 24px;
-    }
-
-    .screw-bl {
-      bottom: 24px;
-      left: 24px;
-    }
-
-    .screw-br {
-      bottom: 24px;
-      right: 24px;
-    }
-
-    /* Watermark text */
     .footer-watermark {
       font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: clamp(6rem, 16vw, 12rem);
+      font-size: clamp(7rem, 18vw, 16rem);
       font-weight: 800;
-      color: rgba(255, 255, 255, 0.03);
-      position: absolute;
-      bottom: -35px;
-      left: 20px;
-      line-height: 1;
+      color: rgba(107, 78, 255, 0.04);
+      line-height: 0.85;
       pointer-events: none;
-      letter-spacing: -6px;
+      letter-spacing: -8px;
       user-select: none;
+      text-align: left;
+      padding-bottom: 0;
+      margin-top: 16px;
+      display: block;
+      position: relative;
       z-index: 1;
+    }
+
+    .footer-glow {
+      display: none;
     }
 
     .footer-content {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
+      align-items: flex-start;
+      gap: 48px;
       width: 100%;
-      flex-grow: 1;
       position: relative;
       z-index: 5;
     }
 
-    .footer-col-left {
+    .footer-brand-col {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: left;
+      gap: 16px;
+      max-width: 340px;
     }
 
-    .footer-col-right {
+    .footer-logo {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-      text-align: right;
+      align-items: center;
+      gap: 8px;
     }
 
-    .footer-title {
+    .footer-logo-text {
       font-family: 'Bricolage Grotesque', sans-serif;
-      font-size: 1.8rem;
       font-weight: 800;
-      color: #FFF;
+      font-size: 1.3rem;
+      color: var(--ink);
       letter-spacing: -0.5px;
     }
 
-    .footer-email {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #FF7A59;
-      /* Warm orange-coral pop */
-      text-decoration: underline;
-      transition: color 0.2s;
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      line-height: 1.6;
+      font-weight: 400;
     }
 
-    .footer-email:hover {
-      color: #FFA38F;
+    .footer-links-wrapper {
+      display: flex;
+      gap: 80px;
+    }
+
+    .footer-links-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--ink3);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .footer-links-col a {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .footer-links-col a:hover {
+      color: var(--violet);
+      transform: translateX(2px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      width: 100%;
+      position: relative;
+      z-index: 5;
     }
 
     .footer-copy {
       font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.35);
+      color: var(--ink3);
       font-weight: 500;
     }
 
     .footer-social-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
     }
 
     .footer-social-links a {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--ink2);
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 500;
       transition: color 0.2s;
     }
 
     .footer-social-links a:hover {
-      color: #FFF;
+      color: var(--violet);
     }
 
     /* ══════════════════════════════
@@ -2670,51 +2740,31 @@
       }
 
       footer {
-        padding: 48px 32px;
-        min-height: auto;
-      }
-
-      .footer-screw {
-        width: 4px;
-        height: 4px;
-      }
-
-      .screw-tl {
-        top: 16px;
-        left: 16px;
-      }
-
-      .screw-tr {
-        top: 16px;
-        right: 16px;
-      }
-
-      .screw-bl {
-        bottom: 16px;
-        left: 16px;
-      }
-
-      .screw-br {
-        bottom: 16px;
-        right: 16px;
-      }
-
-      .footer-watermark {
-        bottom: -20px;
-        left: 20px;
+        padding: 60px 6% 0;
+        gap: 36px;
       }
 
       .footer-content {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 32px;
+        gap: 36px;
       }
 
-      .footer-col-left,
-      .footer-col-right {
+      .footer-links-wrapper {
+        gap: 48px;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .footer-bottom {
+        flex-direction: column-reverse;
         align-items: flex-start;
-        text-align: left;
-        gap: 12px;
+        gap: 20px;
+        padding-top: 20px;
+      }
+
+      .footer-watermark {
+        font-size: clamp(5rem, 22vw, 10rem);
+        letter-spacing: -4px;
       }
     }
 
@@ -2750,6 +2800,71 @@
     .delay-4 {
       animation-delay: 0.4s
     }
+
+    /* ── SCROLL REVEAL ANIMATIONS ── */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+                  transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.scale-in {
+      transform: scale(0.94);
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .scroll-reveal.stagger-1 {
+      transition-delay: 0.1s;
+    }
+
+    .scroll-reveal.stagger-2 {
+      transition-delay: 0.2s;
+    }
+
+    .scroll-reveal.stagger-3 {
+      transition-delay: 0.3s;
+    }
+
+    .scroll-reveal.stagger-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* Restore component design system transitions after entrance reveal */
+    .bento-card.scroll-reveal.active {
+      transition: opacity 0.8s ease,
+                  transform 0.28s ease,
+                  box-shadow 0.28s ease,
+                  border-color 0.28s ease;
+    }
+
+    .success-card.scroll-reveal.active {
+      transition: opacity 0.8s ease,
+                  transform 0.2s ease,
+                  box-shadow 0.2s ease;
+    }
+
+    .p-card.scroll-reveal.active {
+      transition: opacity 0.8s ease,
+                  transform 0.25s ease,
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+    }
+
+    /* Premium design system focus/outline styling (fixes browser default outline on active clicks) */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--violet);
+      outline-offset: 4px;
+    }
+    a:focus:not(:focus-visible), button:focus:not(:focus-visible),
+    div[onclick]:focus:not(:focus-visible) {
+      outline: none;
+    }
   </style>
 </head>
 
@@ -2759,7 +2874,10 @@
   <!-- NAV -->
   <nav>
     <div class="logo" style="cursor:pointer" onclick="showPageByName('home')">
-      <div class="logo-hex">🐝</div>
+      <svg width="34" height="28" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; flex-shrink: 0;">
+        <path d="M11.3097 4.57526L1.95097 12.3742C1.25346 12.9555 1.62912 14.0905 2.53568 14.1409L8.60684 14.4782C8.85951 14.4922 9.1081 14.4099 9.3025 14.2479L14.1644 10.1964C14.6141 9.82161 15.2881 9.91155 15.6238 10.3911L18.1903 14.0576C18.3836 14.3337 18.7029 14.4939 19.0398 14.4836L34.1442 14.0259C34.6368 14.011 35.0451 13.6394 35.1062 13.1504L35.3595 11.124C35.4341 10.5272 34.9687 10 34.3672 10H28.0662C27.7149 10 27.3894 9.8157 27.2087 9.51449L21.7913 0.485504C21.6106 0.184299 21.2851 0 20.9338 0H13.0662C12.7149 0 12.3894 0.184299 12.2087 0.485504L11.3256 1.95735C11.1268 2.28873 11.1367 2.705 11.351 3.02655L11.5016 3.25234C11.785 3.67755 11.7023 4.24809 11.3097 4.57526Z" fill="var(--violet)"/>
+        <path d="M24.1903 25.4247L33.549 17.6258C34.2465 17.0445 33.8709 15.9095 32.9643 15.8591L26.8932 15.5218C26.6405 15.5078 26.3919 15.5901 26.1975 15.7521L21.3356 19.8036C20.8859 20.1784 20.2119 20.0884 19.8762 19.6089L17.3097 15.9424C17.1164 15.6663 16.7971 15.5061 16.4602 15.5164L1.35579 15.9741C0.863205 15.989 0.454929 16.3606 0.393803 16.8496L0.140503 18.876C0.0658989 19.4728 0.531284 20 1.13278 20H7.43381C7.78507 20 8.11058 20.1843 8.2913 20.4855L13.7087 29.5145C13.8894 29.8157 14.2149 30 14.5662 30H22.4338C22.7851 30 23.1106 29.8157 23.2913 29.5145L24.1744 28.0426C24.3732 27.7113 24.3633 27.295 24.149 26.9735L23.9984 26.7477C23.715 26.3224 23.7977 25.7519 24.1903 25.4247Z" fill="var(--violet)"/>
+      </svg>
       TaskHive
     </div>
     <ul class="nav-links">
@@ -2809,14 +2927,14 @@
     </section>
     <!-- FEATURES BENTO -->
     <section class="section">
-      <div class="section-eyebrow">Why TaskHive?</div>
-      <h2 class="section-h2">Built for the frustrations<br>your team faces daily.</h2>
-      <p class="section-sub">Every feature solves a specific pain — not a capability you'll admire once and never use again.</p>
+      <div class="section-eyebrow scroll-reveal">Why TaskHive?</div>
+      <h2 class="section-h2 scroll-reveal stagger-1">Built for the frustrations<br>your team faces daily.</h2>
+      <p class="section-sub scroll-reveal stagger-2">Every feature solves a specific pain — not a capability you'll admire once and never use again.</p>
 
       <div class="bento">
 
         <!-- Card 1: Smart Task Organization -->
-        <div class="bento-card">
+        <div class="bento-card scroll-reveal scale-in stagger-1">
           <div class="bento-card-text">
             <h3>Stop Wasting Time Deciding What to Do Next</h3>
             <p>AI Task Prioritization surfaces the work that unblocks your team — automatically. No more Monday morning triage meetings.</p>
@@ -2827,7 +2945,7 @@
         </div>
 
         <!-- Card 2: Automated Workflows -->
-        <div class="bento-card">
+        <div class="bento-card scroll-reveal scale-in stagger-2">
           <div class="bento-card-text">
             <h3>Zero Disruption to Your Existing Workflow</h3>
             <p>Automated handoffs, status updates, and reminders happen in the background. Your team ships more without adding a single new habit.</p>
@@ -2838,7 +2956,7 @@
         </div>
 
         <!-- Card 3: File & Comment Management -->
-        <div class="bento-card tall">
+        <div class="bento-card tall scroll-reveal scale-in stagger-3">
           <div class="bento-card-text">
             <h3>Everyone Sees the Same Truth at the Same Time</h3>
             <p>Inline comments, files, and feedback threads live inside each task — not scattered across 4 different Slack channels from 3 weeks ago.</p>
@@ -2848,7 +2966,7 @@
           </div>
         </div>
         <!-- Card 4: Real-Time Progress Tracking (full width) -->
-        <div class="bento-card wide">
+        <div class="bento-card wide scroll-reveal scale-in stagger-2">
           <!-- Left: text -->
           <div class="bento-card-text">
             <h3>Your Team Lead Finally Gets Visibility — Without Asking</h3>
@@ -2866,8 +2984,8 @@
     <!-- TOOLS INTEGRATION -->
     <section class="integrations-section">
       <div class="integrations-header">
-        <h2 class="integrations-title">We Play Well With<br>Everything You Already Use</h2>
-        <p class="integrations-subtitle">You don't have to choose between TaskHive and your stack. Slack, Trello, Zoom, Jira — we sit on top of them all. Zero migration. Zero re-training. Just smarter work.</p>
+        <h2 class="integrations-title scroll-reveal">We Play Well With<br>Everything You Already Use</h2>
+        <p class="integrations-subtitle scroll-reveal stagger-1">You don't have to choose between TaskHive and your stack. Slack, Trello, Zoom, Jira — we sit on top of them all. Zero migration. Zero re-training. Just smarter work.</p>
       </div>
 
       <div class="integration-canvas">
@@ -2881,10 +2999,9 @@
 
         <!-- Center branding node -->
         <div class="center-node">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;">
-            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="#6B4EFF" />
-            <path d="M12 5L5 9v6l7 4 7-4V9l-7-4z" fill="#FFF" />
-            <path d="M12 8l4 2.3v4.6l-4 2.3-4-2.3v-4.6L12 8z" fill="#6B4EFF" />
+          <svg width="29" height="24" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+            <path d="M11.3097 4.57526L1.95097 12.3742C1.25346 12.9555 1.62912 14.0905 2.53568 14.1409L8.60684 14.4782C8.85951 14.4922 9.1081 14.4099 9.3025 14.2479L14.1644 10.1964C14.6141 9.82161 15.2881 9.91155 15.6238 10.3911L18.1903 14.0576C18.3836 14.3337 18.7029 14.4939 19.0398 14.4836L34.1442 14.0259C34.6368 14.011 35.0451 13.6394 35.1062 13.1504L35.3595 11.124C35.4341 10.5272 34.9687 10 34.3672 10H28.0662C27.7149 10 27.3894 9.8157 27.2087 9.51449L21.7913 0.485504C21.6106 0.184299 21.2851 0 20.9338 0H13.0662C12.7149 0 12.3894 0.184299 12.2087 0.485504L11.3256 1.95735C11.1268 2.28873 11.1367 2.705 11.351 3.02655L11.5016 3.25234C11.785 3.67755 11.7023 4.24809 11.3097 4.57526Z" fill="var(--violet)"/>
+            <path d="M24.1903 25.4247L33.549 17.6258C34.2465 17.0445 33.8709 15.9095 32.9643 15.8591L26.8932 15.5218C26.6405 15.5078 26.3919 15.5901 26.1975 15.7521L21.3356 19.8036C20.8859 20.1784 20.2119 20.0884 19.8762 19.6089L17.3097 15.9424C17.1164 15.6663 16.7971 15.5061 16.4602 15.5164L1.35579 15.9741C0.863205 15.989 0.454929 16.3606 0.393803 16.8496L0.140503 18.876C0.0658989 19.4728 0.531284 20 1.13278 20H7.43381C7.78507 20 8.11058 20.1843 8.2913 20.4855L13.7087 29.5145C13.8894 29.8157 14.2149 30 14.5662 30H22.4338C22.7851 30 23.1106 29.8157 23.2913 29.5145L24.1744 28.0426C24.3732 27.7113 24.3633 27.295 24.149 26.9735L23.9984 26.7477C23.715 26.3224 23.7977 25.7519 24.1903 25.4247Z" fill="var(--violet)"/>
           </svg>
           <span class="center-logo-text">TaskHive</span>
         </div>
@@ -2968,13 +3085,13 @@
     <!-- SOCIAL PROOF / SUCCESS STORIES -->
     <section class="proof">
       <div class="success-header">
-        <h2 class="success-title">Trusted by 100,000+ Teams<br>Around the Globe</h2>
-        <p class="success-subtitle">Real teams. Real deadlines. Real results — not just "improved productivity." See what actually changed.</p>
+        <h2 class="success-title scroll-reveal">Trusted by 100,000+ Teams<br>Around the Globe</h2>
+        <p class="success-subtitle scroll-reveal stagger-1">Real teams. Real deadlines. Real results — not just "improved productivity." See what actually changed.</p>
       </div>
 
       <div class="success-grid">
         <!-- Card 1: Milla Ass -->
-        <div class="success-card success-card-gray col-span-2">
+        <div class="success-card success-card-gray col-span-2 scroll-reveal scale-in stagger-1">
           <p class="testimonial-quote">"We shipped 2 sprints ahead of schedule in our first quarter using TaskHive. The AI prioritization alone saved our team 4+ hours of planning meetings every week. I stopped asking 'what's blocking you?' — TaskHive already knew."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
@@ -2989,7 +3106,7 @@
         </div>
 
         <!-- Card 2: Robert Fox -->
-        <div class="success-card success-card-gradient">
+        <div class="success-card success-card-gradient scroll-reveal scale-in stagger-2">
           <p class="testimonial-quote">"Set up in 20 minutes. Our entire Trello board migrated automatically. The team didn't even notice the switch — except that things started moving faster."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
@@ -3000,17 +3117,17 @@
         </div>
 
         <!-- Card 3: Photo 1 (Robert Fox or Checkered shirt man) -->
-        <div class="success-card-image">
+        <div class="success-card-image scroll-reveal scale-in stagger-3">
           <img src="testimonial_man_1.png" alt="Team Member Checkered Shirt">
         </div>
 
         <!-- Card 4: Photo 2 (Esther Howard or Glasses man) -->
-        <div class="success-card-image">
+        <div class="success-card-image scroll-reveal scale-in stagger-1">
           <img src="testimonial_man_2.png" alt="Team Member Glasses">
         </div>
 
         <!-- Card 5: Esther Howard -->
-        <div class="success-card success-card-gradient">
+        <div class="success-card success-card-gradient scroll-reveal scale-in stagger-2">
           <p class="testimonial-quote">"I finally have one place where I can see what every team member is working on without sending a single Slack message. That alone is worth the price."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
@@ -3021,7 +3138,7 @@
         </div>
 
         <!-- Card 6: Josh Biler -->
-        <div class="success-card success-card-gray col-span-2">
+        <div class="success-card success-card-gray col-span-2 scroll-reveal scale-in stagger-3">
           <p class="testimonial-quote">"Our remote team spans 6 timezones. Before TaskHive, we spent more time syncing than building. Now our standup is 8 minutes and we've reduced missed deadlines by 73% in 3 months. That's not a small thing — that's our reputation."</p>
           <div class="testimonial-footer">
             <div class="testimonial-author">
@@ -3412,28 +3529,46 @@
     </div>
 
     <footer>
-      <!-- Screw rivets -->
-      <div class="footer-screw screw-tl"></div>
-      <div class="footer-screw screw-tr"></div>
-      <div class="footer-screw screw-bl"></div>
-      <div class="footer-screw screw-br"></div>
-
-      <!-- Watermark background -->
-      <div class="footer-watermark">taskhive</div>
-
       <div class="footer-content">
-        <div class="footer-col-left">
-          <span class="footer-title">Contacts</span>
-          <a href="mailto:hello@taskhive.com" class="footer-email">hello@taskhive.com ↗</a>
-        </div>
-        <div class="footer-col-right">
-          <span class="footer-copy">© 2026 TaskHive Studio</span>
-          <div class="footer-social-links">
-            <a href="#" target="_blank">Instagram ↗</a>
-            <a href="#" target="_blank">Dribbble ↗</a>
-            <a href="#" target="_blank">Behance ↗</a>
-            <a href="#" target="_blank">LinkedIn ↗</a>
+        <!-- Logo & Tagline Column -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <svg width="29" height="24" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M11.3097 4.57526L1.95097 12.3742C1.25346 12.9555 1.62912 14.0905 2.53568 14.1409L8.60684 14.4782C8.85951 14.4922 9.1081 14.4099 9.3025 14.2479L14.1644 10.1964C14.6141 9.82161 15.2881 9.91155 15.6238 10.3911L18.1903 14.0576C18.3836 14.3337 18.7029 14.4939 19.0398 14.4836L34.1442 14.0259C34.6368 14.011 35.0451 13.6394 35.1062 13.1504L35.3595 11.124C35.4341 10.5272 34.9687 10 34.3672 10H28.0662C27.7149 10 27.3894 9.8157 27.2087 9.51449L21.7913 0.485504C21.6106 0.184299 21.2851 0 20.9338 0H13.0662C12.7149 0 12.3894 0.184299 12.2087 0.485504L11.3256 1.95735C11.1268 2.28873 11.1367 2.705 11.351 3.02655L11.5016 3.25234C11.785 3.67755 11.7023 4.24809 11.3097 4.57526Z" fill="var(--violet)"/>
+              <path d="M24.1903 25.4247L33.549 17.6258C34.2465 17.0445 33.8709 15.9095 32.9643 15.8591L26.8932 15.5218C26.6405 15.5078 26.3919 15.5901 26.1975 15.7521L21.3356 19.8036C20.8859 20.1784 20.2119 20.0884 19.8762 19.6089L17.3097 15.9424C17.1164 15.6663 16.7971 15.5061 16.4602 15.5164L1.35579 15.9741C0.863205 15.989 0.454929 16.3606 0.393803 16.8496L0.140503 18.876C0.0658989 19.4728 0.531284 20 1.13278 20H7.43381C7.78507 20 8.11058 20.1843 8.2913 20.4855L13.7087 29.5145C13.8894 29.8157 14.2149 30 14.5662 30H22.4338C22.7851 30 23.1106 29.8157 23.2913 29.5145L24.1744 28.0426C24.3732 27.7113 24.3633 27.295 24.149 26.9735L23.9984 26.7477C23.715 26.3224 23.7977 25.7519 24.1903 25.4247Z" fill="var(--violet)"/>
+            </svg>
+            <span class="footer-logo-text">TaskHive</span>
           </div>
+          <p class="footer-tagline">AI-powered task prioritization and async sprint tracking built for remote-first teams.</p>
+        </div>
+
+        <!-- Links Columns Group -->
+        <div class="footer-links-wrapper">
+          <div class="footer-links-col">
+            <span class="footer-links-title">Product</span>
+            <a href="#" onclick="showPageByName('home')">Features</a>
+            <a href="#" onclick="showPageByName('pricing')">Pricing</a>
+            <a href="#" onclick="showPageByName('home')">Integrations</a>
+          </div>
+          <div class="footer-links-col">
+            <span class="footer-links-title">Company</span>
+            <a href="mailto:hello@taskhive.com">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Giant watermark text à la Glyphs reference -->
+      <span class="footer-watermark" aria-hidden="true">taskhive</span>
+
+      <div class="footer-bottom" style="position: relative; z-index: 5; margin-top: -20px;">
+        <span class="footer-copy">© 2026 TaskHive Studio. All rights reserved.</span>
+        <div class="footer-social-links">
+          <a href="#" target="_blank">Instagram ↗</a>
+          <a href="#" target="_blank">Dribbble ↗</a>
+          <a href="#" target="_blank">Behance ↗</a>
+          <a href="#" target="_blank">LinkedIn ↗</a>
         </div>
       </div>
     </footer>
@@ -3445,10 +3580,10 @@
   <div class="page" id="page-pricing">
     <section class="pricing-hero">
       <div class="pricing-hero-bg"></div>
-      <div class="section-eyebrow">Pricing</div>
-      <h1>Simple Pricing<br>for Every Team.</h1>
-      <p>Affordable plans that scale with your team's needs.<br>Start free. Upgrade only when you're ready.</p>
-      <div class="billing-toggle">
+      <div class="section-eyebrow scroll-reveal">Pricing</div>
+      <h1 class="scroll-reveal stagger-1">Simple Pricing<br>for Every Team.</h1>
+      <p class="scroll-reveal stagger-2">Affordable plans that scale with your team's needs.<br>Start free. Upgrade only when you're ready.</p>
+      <div class="billing-toggle scroll-reveal stagger-3">
         <span class="bill-label on" id="lbl-m">Monthly</span>
         <button class="toggle-pill" id="billing-pill" onclick="toggleBill()">
           <div class="toggle-thumb" id="toggle-thumb"></div>
@@ -3460,7 +3595,7 @@
 
     <div class="pricing-cards">
       <!-- BASIC -->
-      <div class="p-card">
+      <div class="p-card scroll-reveal scale-in stagger-1">
         <div class="p-plan">Basic</div>
         <div class="p-desc">This works. You'll love it. And you'll outgrow it — that's the point. Start here, upgrade when you're ready.</div>
         <div class="p-price">
@@ -3498,7 +3633,7 @@
       </div>
 
       <!-- PRO (FEATURED) -->
-      <div class="p-card featured">
+      <div class="p-card featured scroll-reveal scale-in stagger-2">
         <div class="popular-chip">✦ Most Popular</div>
         <div class="p-plan featured-label">Pro</div>
         <div class="p-desc" style="color:rgba(255,255,255,0.55)">This is where real teams live. Complete visibility, AI-powered prioritization, and every integration your team already uses — all in one place.</div>
@@ -3650,28 +3785,46 @@
     </section>
 
     <footer>
-      <!-- Screw rivets -->
-      <div class="footer-screw screw-tl"></div>
-      <div class="footer-screw screw-tr"></div>
-      <div class="footer-screw screw-bl"></div>
-      <div class="footer-screw screw-br"></div>
-
-      <!-- Watermark background -->
-      <div class="footer-watermark">taskhive</div>
-
       <div class="footer-content">
-        <div class="footer-col-left">
-          <span class="footer-title">Contacts</span>
-          <a href="mailto:hello@taskhive.com" class="footer-email">hello@taskhive.com ↗</a>
-        </div>
-        <div class="footer-col-right">
-          <span class="footer-copy">© 2026 TaskHive Studio</span>
-          <div class="footer-social-links">
-            <a href="#" target="_blank">Instagram ↗</a>
-            <a href="#" target="_blank">Dribbble ↗</a>
-            <a href="#" target="_blank">Behance ↗</a>
-            <a href="#" target="_blank">LinkedIn ↗</a>
+        <!-- Logo & Tagline Column -->
+        <div class="footer-brand-col">
+          <div class="footer-logo">
+            <svg width="29" height="24" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+              <path d="M11.3097 4.57526L1.95097 12.3742C1.25346 12.9555 1.62912 14.0905 2.53568 14.1409L8.60684 14.4782C8.85951 14.4922 9.1081 14.4099 9.3025 14.2479L14.1644 10.1964C14.6141 9.82161 15.2881 9.91155 15.6238 10.3911L18.1903 14.0576C18.3836 14.3337 18.7029 14.4939 19.0398 14.4836L34.1442 14.0259C34.6368 14.011 35.0451 13.6394 35.1062 13.1504L35.3595 11.124C35.4341 10.5272 34.9687 10 34.3672 10H28.0662C27.7149 10 27.3894 9.8157 27.2087 9.51449L21.7913 0.485504C21.6106 0.184299 21.2851 0 20.9338 0H13.0662C12.7149 0 12.3894 0.184299 12.2087 0.485504L11.3256 1.95735C11.1268 2.28873 11.1367 2.705 11.351 3.02655L11.5016 3.25234C11.785 3.67755 11.7023 4.24809 11.3097 4.57526Z" fill="var(--violet)"/>
+              <path d="M24.1903 25.4247L33.549 17.6258C34.2465 17.0445 33.8709 15.9095 32.9643 15.8591L26.8932 15.5218C26.6405 15.5078 26.3919 15.5901 26.1975 15.7521L21.3356 19.8036C20.8859 20.1784 20.2119 20.0884 19.8762 19.6089L17.3097 15.9424C17.1164 15.6663 16.7971 15.5061 16.4602 15.5164L1.35579 15.9741C0.863205 15.989 0.454929 16.3606 0.393803 16.8496L0.140503 18.876C0.0658989 19.4728 0.531284 20 1.13278 20H7.43381C7.78507 20 8.11058 20.1843 8.2913 20.4855L13.7087 29.5145C13.8894 29.8157 14.2149 30 14.5662 30H22.4338C22.7851 30 23.1106 29.8157 23.2913 29.5145L24.1744 28.0426C24.3732 27.7113 24.3633 27.295 24.149 26.9735L23.9984 26.7477C23.715 26.3224 23.7977 25.7519 24.1903 25.4247Z" fill="var(--violet)"/>
+            </svg>
+            <span class="footer-logo-text">TaskHive</span>
           </div>
+          <p class="footer-tagline">AI-powered task prioritization and async sprint tracking built for remote-first teams.</p>
+        </div>
+
+        <!-- Links Columns Group -->
+        <div class="footer-links-wrapper">
+          <div class="footer-links-col">
+            <span class="footer-links-title">Product</span>
+            <a href="#" onclick="showPageByName('home')">Features</a>
+            <a href="#" onclick="showPageByName('pricing')">Pricing</a>
+            <a href="#" onclick="showPageByName('home')">Integrations</a>
+          </div>
+          <div class="footer-links-col">
+            <span class="footer-links-title">Company</span>
+            <a href="mailto:hello@taskhive.com">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Giant watermark text à la Glyphs reference -->
+      <span class="footer-watermark" aria-hidden="true">taskhive</span>
+
+      <div class="footer-bottom" style="position: relative; z-index: 5; margin-top: -20px;">
+        <span class="footer-copy">© 2026 TaskHive Studio. All rights reserved.</span>
+        <div class="footer-social-links">
+          <a href="#" target="_blank">Instagram ↗</a>
+          <a href="#" target="_blank">Dribbble ↗</a>
+          <a href="#" target="_blank">Behance ↗</a>
+          <a href="#" target="_blank">LinkedIn ↗</a>
         </div>
       </div>
     </footer>
@@ -3759,6 +3912,57 @@
     function toggleFaq(el) {
       el.classList.toggle('open');
     }
+
+    /* ─── SCROLL REVEAL OBSERVER ─── */
+    (function () {
+      function initScrollReveal() {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const integrationsSection = document.querySelector('.integrations-section');
+
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0.05
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, observerOptions);
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const integrationsCanvas = document.querySelector('.integration-canvas');
+        if (integrationsCanvas && integrationsSection) {
+          const integrationsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                integrationsSection.classList.add('revealed');
+              } else {
+                integrationsSection.classList.remove('revealed');
+              }
+            });
+          }, {
+            root: null,
+            rootMargin: '-30% 0px -30% 0px',
+            threshold: 0
+          });
+          integrationsObserver.observe(integrationsCanvas);
+        }
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollReveal);
+      } else {
+        initScrollReveal();
+      }
+
+      // Re-run observer bind on click for routing (SPA style)
+      document.addEventListener('click', () => setTimeout(initScrollReveal, 80));
+    })();
   </script>
 </body>
 
